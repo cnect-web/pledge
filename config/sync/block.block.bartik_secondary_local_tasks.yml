@@ -1,14 +1,14 @@
-uuid: d6d77a22-b517-4d28-8353-de9a0de9484e
+uuid: 0076c22e-a82a-4070-93fd-9587b5d96f12
 langcode: en
 status: true
 dependencies:
   theme:
-    - adminimal_theme
+    - bartik
 _core:
   default_config_hash: DJ7Om1C2xWr2GI8CjZaZtyWpP-0S3hRR3oROZl1oesc
-id: adminimal_theme_secondary_local_tasks
-theme: adminimal_theme
-region: pre_content
+id: bartik_secondary_local_tasks
+theme: bartik
+region: header
 weight: 0
 provider: null
 plugin: local_tasks_block
