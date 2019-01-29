@@ -1,0 +1,14 @@
+uuid: b7fa9e32-fbe5-4621-914c-8c3272b713e7
+name: 'Pledge Viewer'
+mail: email@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
