@@ -1,0 +1,27 @@
+uuid: 769371f6-f6eb-4d70-8d31-dd3daa890867
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pledge_funding
+field_name: field_pledge_funding
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'YES'
+      label: 'YES'
+    -
+      value: 'NO'
+      label: 'NO'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

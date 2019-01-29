@@ -1,0 +1,86 @@
+uuid: 7a24cd37-8dd5-4d49-abfb-fb0be11d358b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pledge_countries.field_pledge_eu28
+    - field.field.taxonomy_term.pledge_countries.field_pledge_iso
+    - field.field.taxonomy_term.pledge_countries.field_pledge_national_website
+    - field.field.taxonomy_term.pledge_countries.field_pledge_nuts_id
+    - field.field.taxonomy_term.pledge_countries.field_pledge_order
+    - field.field.taxonomy_term.pledge_countries.field_pledge_show_in_list
+    - taxonomy.vocabulary.pledge_countries
+  module:
+    - link
+    - text
+id: taxonomy_term.pledge_countries.default
+targetEntityType: taxonomy_term
+bundle: pledge_countries
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pledge_eu28:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_pledge_iso:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pledge_national_website:
+    weight: 5
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_pledge_nuts_id:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_pledge_order:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_pledge_show_in_list:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden: {  }

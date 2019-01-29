@@ -1,0 +1,19 @@
+uuid: 5aabe866-1f18-4a39-b2ac-4617f64a568a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_org_twitter
+    - paragraphs.paragraphs_type.pledge_organization
+id: paragraph.pledge_organization.field_pledge_org_twitter
+field_name: field_pledge_org_twitter
+entity_type: paragraph
+bundle: pledge_organization
+label: Twitter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

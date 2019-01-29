@@ -1,0 +1,9 @@
+uuid: 69f4933b-a1bd-4706-9996-3ef06548ceb6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Pledge statuses'
+vid: pledge_statuses
+description: ''
+hierarchy: 0
+weight: 0

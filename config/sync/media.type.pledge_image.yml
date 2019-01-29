@@ -1,0 +1,13 @@
+uuid: 089cbf58-ce2d-4c59-b191-32864fd60d44
+langcode: en
+status: true
+dependencies: {  }
+id: pledge_image
+label: Image
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

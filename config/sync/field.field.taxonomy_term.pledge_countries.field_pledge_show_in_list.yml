@@ -1,0 +1,23 @@
+uuid: 28bcb826-65a4-41aa-a677-f8dd036f7c28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_show_in_list
+    - taxonomy.vocabulary.pledge_countries
+id: taxonomy_term.pledge_countries.field_pledge_show_in_list
+field_name: field_pledge_show_in_list
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: 'Show in the list'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Show in the list'
+  off_label: 'Do not show in the list'
+field_type: boolean

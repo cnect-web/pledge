@@ -1,0 +1,52 @@
+uuid: ef9fddc3-b526-49a1-8337-774aeff76489
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pledge_milestone.field_pledge_completion_date
+    - field.field.paragraph.pledge_milestone.field_pledge_last_update
+    - field.field.paragraph.pledge_milestone.field_pledge_milestone_name
+    - field.field.paragraph.pledge_milestone.field_pledge_milestone_status
+    - paragraphs.paragraphs_type.pledge_milestone
+  module:
+    - datetime
+id: paragraph.pledge_milestone.default
+targetEntityType: paragraph
+bundle: pledge_milestone
+mode: default
+content:
+  field_pledge_completion_date:
+    weight: 1
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pledge_last_update:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pledge_milestone_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pledge_milestone_status:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

@@ -1,0 +1,50 @@
+uuid: df2fba4a-4956-4810-82aa-885ba9273824
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pledge_milestone.field_pledge_completion_date
+    - field.field.paragraph.pledge_milestone.field_pledge_last_update
+    - field.field.paragraph.pledge_milestone.field_pledge_milestone_name
+    - field.field.paragraph.pledge_milestone.field_pledge_milestone_status
+    - paragraphs.paragraphs_type.pledge_milestone
+  module:
+    - datetime
+id: paragraph.pledge_milestone.default
+targetEntityType: paragraph
+bundle: pledge_milestone
+mode: default
+content:
+  field_pledge_completion_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pledge_last_update:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pledge_milestone_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pledge_milestone_status:
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

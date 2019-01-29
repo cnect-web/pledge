@@ -1,0 +1,28 @@
+uuid: 17af588e-75bd-4518-b763-71d5590637ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pledge_page.body
+    - node.type.pledge_page
+  module:
+    - text
+    - user
+id: node.pledge_page.default
+targetEntityType: node
+bundle: pledge_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

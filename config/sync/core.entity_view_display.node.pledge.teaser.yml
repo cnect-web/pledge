@@ -1,0 +1,26 @@
+uuid: fb3d3730-8a94-4f70-8e68-068dc7fb297e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pledge.field_pledge_countries
+    - field.field.node.pledge.field_pledge_impact
+    - field.field.node.pledge.field_pledge_organizations
+    - node.type.pledge
+  module:
+    - user
+id: node.pledge.teaser
+targetEntityType: node
+bundle: pledge
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_pledge_countries: true
+  field_pledge_impact: true
+  field_pledge_organizations: true

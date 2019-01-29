@@ -1,0 +1,21 @@
+uuid: b573c616-29e5-4c29-bcd1-e981e5fbb74d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_last_update
+    - paragraphs.paragraphs_type.pledge_impact
+  module:
+    - datetime
+id: paragraph.pledge_impact.field_pledge_last_update
+field_name: field_pledge_last_update
+entity_type: paragraph
+bundle: pledge_impact
+label: 'Last update'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

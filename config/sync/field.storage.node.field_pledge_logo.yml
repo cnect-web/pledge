@@ -1,0 +1,20 @@
+uuid: 6152e0cd-ec09-4e58-be2b-ac9e2a5625e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_pledge_logo
+field_name: field_pledge_logo
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

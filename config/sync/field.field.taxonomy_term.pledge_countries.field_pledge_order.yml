@@ -1,0 +1,23 @@
+uuid: 8d51fdfc-a505-4390-891f-17fb7b5d231e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_order
+    - taxonomy.vocabulary.pledge_countries
+id: taxonomy_term.pledge_countries.field_pledge_order
+field_name: field_pledge_order
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: Order
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

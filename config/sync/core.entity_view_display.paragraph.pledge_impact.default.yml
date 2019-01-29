@@ -1,0 +1,59 @@
+uuid: fbc06161-9dab-4423-8917-b13ebccdcf47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pledge_impact.field_pledge_indicator_desc
+    - field.field.paragraph.pledge_impact.field_pledge_indicator_name
+    - field.field.paragraph.pledge_impact.field_pledge_indicator_status
+    - field.field.paragraph.pledge_impact.field_pledge_indicator_target
+    - field.field.paragraph.pledge_impact.field_pledge_last_update
+    - paragraphs.paragraphs_type.pledge_impact
+  module:
+    - datetime
+id: paragraph.pledge_impact.default
+targetEntityType: paragraph
+bundle: pledge_impact
+mode: default
+content:
+  field_pledge_indicator_desc:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_pledge_indicator_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pledge_indicator_status:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pledge_indicator_target:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pledge_last_update:
+    weight: 4
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

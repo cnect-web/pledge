@@ -1,0 +1,9 @@
+uuid: ee54c5fe-7390-4530-bee0-3b91887e129f
+langcode: en
+status: true
+dependencies: {  }
+id: pledge_impact
+label: 'Pledge impact'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

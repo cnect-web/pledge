@@ -1,0 +1,19 @@
+uuid: 33d7950c-266a-4e3e-b4f2-18a85f2ee4c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_indicator_target
+    - paragraphs.paragraphs_type.pledge_impact
+id: paragraph.pledge_impact.field_pledge_indicator_target
+field_name: field_pledge_indicator_target
+entity_type: paragraph
+bundle: pledge_impact
+label: 'Indicator target'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,9 @@
+uuid: 5672ac11-c573-4b1e-9389-73739116c870
+langcode: en
+status: true
+dependencies: {  }
+id: pledge_organization
+label: 'Pledge organization'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

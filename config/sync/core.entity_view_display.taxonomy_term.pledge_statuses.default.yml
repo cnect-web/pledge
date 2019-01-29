@@ -1,0 +1,31 @@
+uuid: 0f0df309-c7de-450d-9a37-19b787c8d4b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pledge_statuses.field_pledge_percentage
+    - taxonomy.vocabulary.pledge_statuses
+  module:
+    - text
+id: taxonomy_term.pledge_statuses.default
+targetEntityType: taxonomy_term
+bundle: pledge_statuses
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pledge_percentage:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden: {  }

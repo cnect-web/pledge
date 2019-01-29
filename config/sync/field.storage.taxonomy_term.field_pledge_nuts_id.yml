@@ -1,0 +1,20 @@
+uuid: 1a910f72-5796-4630-8575-61fc91b0f2e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_pledge_nuts_id
+field_name: field_pledge_nuts_id
+entity_type: taxonomy_term
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

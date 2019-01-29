@@ -1,0 +1,9 @@
+uuid: 7c26763c-fd1a-45f8-8b3c-f38417cf1e9a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Milestone statuses'
+vid: pledge_milestone_statuses
+description: ''
+hierarchy: 0
+weight: 0

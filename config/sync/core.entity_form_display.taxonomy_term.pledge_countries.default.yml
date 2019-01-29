@@ -1,0 +1,88 @@
+uuid: 478ca6a7-00e1-4837-9186-9b0f12074985
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pledge_countries.field_pledge_eu28
+    - field.field.taxonomy_term.pledge_countries.field_pledge_iso
+    - field.field.taxonomy_term.pledge_countries.field_pledge_national_website
+    - field.field.taxonomy_term.pledge_countries.field_pledge_nuts_id
+    - field.field.taxonomy_term.pledge_countries.field_pledge_order
+    - field.field.taxonomy_term.pledge_countries.field_pledge_show_in_list
+    - taxonomy.vocabulary.pledge_countries
+  module:
+    - link
+    - path
+    - text
+id: taxonomy_term.pledge_countries.default
+targetEntityType: taxonomy_term
+bundle: pledge_countries
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pledge_eu28:
+    weight: 32
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_pledge_iso:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pledge_national_website:
+    weight: 35
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_pledge_nuts_id:
+    weight: 31
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pledge_order:
+    weight: 36
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pledge_show_in_list:
+    weight: 33
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

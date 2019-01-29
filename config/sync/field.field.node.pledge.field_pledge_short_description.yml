@@ -1,0 +1,19 @@
+uuid: 22ec29d1-3092-4461-909c-d510b1c53541
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_short_description
+    - node.type.pledge
+id: node.pledge.field_pledge_short_description
+field_name: field_pledge_short_description
+entity_type: node
+bundle: pledge
+label: 'Short description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,20 @@
+uuid: 2dc6a6ad-af5d-4df8-9fbf-73ebdb398b6b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_pledge_countries
+field_name: field_pledge_countries
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

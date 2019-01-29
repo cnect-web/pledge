@@ -1,0 +1,63 @@
+uuid: 19f98b3d-d335-4247-8fa4-cc17d7bd6986
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pledge_organization.field_pledge_org_description
+    - field.field.paragraph.pledge_organization.field_pledge_org_logo
+    - field.field.paragraph.pledge_organization.field_pledge_org_name
+    - field.field.paragraph.pledge_organization.field_pledge_org_twitter
+    - field.field.paragraph.pledge_organization.field_pledge_org_website
+    - paragraphs.paragraphs_type.pledge_organization
+  module:
+    - link
+id: paragraph.pledge_organization.default
+targetEntityType: paragraph
+bundle: pledge_organization
+mode: default
+content:
+  field_pledge_org_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_pledge_org_logo:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_pledge_org_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pledge_org_twitter:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pledge_org_website:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

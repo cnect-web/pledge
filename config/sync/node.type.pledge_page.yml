@@ -1,0 +1,11 @@
+uuid: bcc5f542-f345-4f0a-8499-a9edf3d24c07
+langcode: en
+status: true
+dependencies: {  }
+name: Page
+type: pledge_page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

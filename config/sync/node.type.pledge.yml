@@ -1,0 +1,11 @@
+uuid: 9fad2415-8ad9-4ebc-9a43-3805cd3288bd
+langcode: en
+status: true
+dependencies: {  }
+name: Pledge
+type: pledge
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

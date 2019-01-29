@@ -1,0 +1,23 @@
+uuid: 90e35d1c-3d6f-4adc-a925-f2c09e09c9a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_percentage
+    - taxonomy.vocabulary.pledge_statuses
+id: taxonomy_term.pledge_statuses.field_pledge_percentage
+field_name: field_pledge_percentage
+entity_type: taxonomy_term
+bundle: pledge_statuses
+label: Percentage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

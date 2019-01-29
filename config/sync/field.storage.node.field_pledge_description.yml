@@ -1,0 +1,19 @@
+uuid: d9d5e7d7-154b-4209-9d26-90296788a96b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_pledge_description
+field_name: field_pledge_description
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,30 @@
+uuid: 3f7b3505-243a-42d6-9873-b454d95105c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pledge_page.body
+    - node.type.pledge_page
+  module:
+    - text
+    - user
+id: node.pledge_page.teaser
+targetEntityType: node
+bundle: pledge_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

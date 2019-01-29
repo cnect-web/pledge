@@ -1,0 +1,23 @@
+uuid: 16f5e4f7-1796-438c-b2a9-ee896dee19c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_ds_in_education
+    - node.type.pledge
+id: node.pledge.field_pledge_ds_in_education
+field_name: field_pledge_ds_in_education
+entity_type: node
+bundle: pledge
+label: 'Digital skills in education'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Is Digital skills in education'
+  off_label: 'Is not Digital skills in education'
+field_type: boolean

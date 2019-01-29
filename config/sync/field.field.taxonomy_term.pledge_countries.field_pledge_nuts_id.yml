@@ -1,0 +1,23 @@
+uuid: f74a45b9-a424-46a0-b950-39f8b16bac1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_nuts_id
+    - taxonomy.vocabulary.pledge_countries
+id: taxonomy_term.pledge_countries.field_pledge_nuts_id
+field_name: field_pledge_nuts_id
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: 'Nuts id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

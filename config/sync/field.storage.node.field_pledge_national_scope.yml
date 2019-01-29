@@ -1,0 +1,30 @@
+uuid: f721db62-7f22-43e8-9f42-21cc5f793128
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_pledge_national_scope
+field_name: field_pledge_national_scope
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: None
+      label: None
+    -
+      value: Local
+      label: Local
+    -
+      value: National
+      label: National
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

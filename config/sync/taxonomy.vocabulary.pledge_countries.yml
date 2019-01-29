@@ -1,0 +1,9 @@
+uuid: 70c97c69-a29f-4ad7-a6d5-83baed02ce69
+langcode: en
+status: true
+dependencies: {  }
+name: Countries
+vid: pledge_countries
+description: ''
+hierarchy: 0
+weight: 0

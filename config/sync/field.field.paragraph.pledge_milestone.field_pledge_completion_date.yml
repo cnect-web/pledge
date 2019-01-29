@@ -1,0 +1,21 @@
+uuid: 3cd20b31-4a57-4384-a2bb-86669ca0787f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_completion_date
+    - paragraphs.paragraphs_type.pledge_milestone
+  module:
+    - datetime
+id: paragraph.pledge_milestone.field_pledge_completion_date
+field_name: field_pledge_completion_date
+entity_type: paragraph
+bundle: pledge_milestone
+label: 'Completion date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,18 @@
+uuid: 35021edd-eafb-4f1c-94d6-84a1fbf05c4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_pledge_ds_ict_professional
+field_name: field_pledge_ds_ict_professional
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

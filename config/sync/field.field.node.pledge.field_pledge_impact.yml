@@ -1,0 +1,31 @@
+uuid: ea888169-15f0-452e-8319-5c9ffe4fcd24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_impact
+    - node.type.pledge
+    - paragraphs.paragraphs_type.pledge_impact
+  module:
+    - entity_reference_revisions
+id: node.pledge.field_pledge_impact
+field_name: field_pledge_impact
+entity_type: node
+bundle: pledge
+label: Impact
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pledge_impact: pledge_impact
+    target_bundles_drag_drop:
+      pledge_impact:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

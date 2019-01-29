@@ -1,0 +1,19 @@
+uuid: 23a817f5-e6dd-4761-92fc-1af26807af83
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_iso
+    - taxonomy.vocabulary.pledge_countries
+id: taxonomy_term.pledge_countries.field_pledge_iso
+field_name: field_pledge_iso
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: iso
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

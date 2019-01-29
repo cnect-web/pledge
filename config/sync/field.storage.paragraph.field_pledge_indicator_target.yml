@@ -1,0 +1,21 @@
+uuid: cee4eefd-72dc-441c-9ea5-9ab7643682b5
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_pledge_indicator_target
+field_name: field_pledge_indicator_target
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

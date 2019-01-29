@@ -1,0 +1,23 @@
+uuid: e71059c3-1a05-49a7-9e28-4d0ef42d465b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_eu28
+    - taxonomy.vocabulary.pledge_countries
+id: taxonomy_term.pledge_countries.field_pledge_eu28
+field_name: field_pledge_eu28
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: eu28
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Is eu28'
+  off_label: 'Is not eu28'
+field_type: boolean

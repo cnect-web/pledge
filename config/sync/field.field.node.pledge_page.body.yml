@@ -1,0 +1,22 @@
+uuid: e923804b-69a5-4341-b74e-ffaaa1f993c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.pledge_page
+  module:
+    - text
+id: node.pledge_page.body
+field_name: body
+entity_type: node
+bundle: pledge_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

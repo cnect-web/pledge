@@ -1,0 +1,20 @@
+uuid: e64e21b8-66f3-4b45-b5f4-f1a810cdfa7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_pledge_milestone_status
+field_name: field_pledge_milestone_status
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

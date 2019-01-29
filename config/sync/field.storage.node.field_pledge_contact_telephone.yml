@@ -1,0 +1,19 @@
+uuid: e315624d-303a-4dbe-94e7-32c45aced4ee
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - telephone
+id: node.field_pledge_contact_telephone
+field_name: field_pledge_contact_telephone
+entity_type: node
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

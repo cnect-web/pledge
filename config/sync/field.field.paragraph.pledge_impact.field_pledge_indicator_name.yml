@@ -1,0 +1,19 @@
+uuid: 444e6983-0e3f-4736-b580-9db3e49b3617
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_indicator_name
+    - paragraphs.paragraphs_type.pledge_impact
+id: paragraph.pledge_impact.field_pledge_indicator_name
+field_name: field_pledge_indicator_name
+entity_type: paragraph
+bundle: pledge_impact
+label: 'Indicator name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

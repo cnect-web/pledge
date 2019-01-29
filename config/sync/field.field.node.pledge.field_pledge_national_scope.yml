@@ -1,0 +1,21 @@
+uuid: 86e0ca0e-d512-4d6e-a383-49ea73807988
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_national_scope
+    - node.type.pledge
+  module:
+    - options
+id: node.pledge.field_pledge_national_scope
+field_name: field_pledge_national_scope
+entity_type: node
+bundle: pledge
+label: 'National scope'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

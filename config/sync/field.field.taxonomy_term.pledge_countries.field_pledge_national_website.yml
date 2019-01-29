@@ -1,0 +1,23 @@
+uuid: ed0357ab-4783-48d7-93e6-c27c8c37f398
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_national_website
+    - taxonomy.vocabulary.pledge_countries
+  module:
+    - link
+id: taxonomy_term.pledge_countries.field_pledge_national_website
+field_name: field_pledge_national_website
+entity_type: taxonomy_term
+bundle: pledge_countries
+label: 'National pledge website'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

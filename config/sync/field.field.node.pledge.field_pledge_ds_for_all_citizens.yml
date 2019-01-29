@@ -1,0 +1,23 @@
+uuid: 7b4d75d8-8adb-4be4-a25c-1e1e9494e894
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_ds_for_all_citizens
+    - node.type.pledge
+id: node.pledge.field_pledge_ds_for_all_citizens
+field_name: field_pledge_ds_for_all_citizens
+entity_type: node
+bundle: pledge
+label: 'Digital skills for all citizens'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Is Digital skills for all citizens'
+  off_label: 'Is not Digital skills for all citizens'
+field_type: boolean

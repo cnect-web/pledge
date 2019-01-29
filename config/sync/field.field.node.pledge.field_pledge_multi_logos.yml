@@ -1,0 +1,23 @@
+uuid: 26d67fdb-9245-48e4-8730-89d460179a32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_multi_logos
+    - node.type.pledge
+id: node.pledge.field_pledge_multi_logos
+field_name: field_pledge_multi_logos
+entity_type: node
+bundle: pledge
+label: 'Multiple logos'
+description: 'There are different logos on the image. So, they will be displayed in the popup in full size '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Is Multiple logos'
+  off_label: 'is not Multiple logos'
+field_type: boolean

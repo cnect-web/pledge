@@ -1,0 +1,19 @@
+uuid: e520caa2-a0d9-4378-b617-4a473e7e9478
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_org_description
+    - paragraphs.paragraphs_type.pledge_organization
+id: paragraph.pledge_organization.field_pledge_org_description
+field_name: field_pledge_org_description
+entity_type: paragraph
+bundle: pledge_organization
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
