@@ -4,9 +4,29 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.pledge.field_pledge_contact_email
+    - field.field.node.pledge.field_pledge_contact_name
+    - field.field.node.pledge.field_pledge_contact_telephone
     - field.field.node.pledge.field_pledge_countries
-    - field.field.node.pledge.field_pledge_impact
+    - field.field.node.pledge.field_pledge_description
+    - field.field.node.pledge.field_pledge_ds_for_all_citizens
+    - field.field.node.pledge.field_pledge_ds_for_labour
+    - field.field.node.pledge.field_pledge_ds_ict_professional
+    - field.field.node.pledge.field_pledge_ds_in_education
+    - field.field.node.pledge.field_pledge_funding
+    - field.field.node.pledge.field_pledge_funding_add_text
+    - field.field.node.pledge.field_pledge_impacts
+    - field.field.node.pledge.field_pledge_logo
+    - field.field.node.pledge.field_pledge_milestones
+    - field.field.node.pledge.field_pledge_multi_logos
+    - field.field.node.pledge.field_pledge_national_scope
+    - field.field.node.pledge.field_pledge_old_id
     - field.field.node.pledge.field_pledge_organizations
+    - field.field.node.pledge.field_pledge_qualitative_impact
+    - field.field.node.pledge.field_pledge_roadmap_start_date
+    - field.field.node.pledge.field_pledge_short_description
+    - field.field.node.pledge.field_pledge_twitter
+    - field.field.node.pledge.field_pledge_website
     - node.type.pledge
   module:
     - user
@@ -21,6 +41,26 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_pledge_contact_email: true
+  field_pledge_contact_name: true
+  field_pledge_contact_telephone: true
   field_pledge_countries: true
-  field_pledge_impact: true
+  field_pledge_description: true
+  field_pledge_ds_for_all_citizens: true
+  field_pledge_ds_for_labour: true
+  field_pledge_ds_ict_professional: true
+  field_pledge_ds_in_education: true
+  field_pledge_funding: true
+  field_pledge_funding_add_text: true
+  field_pledge_impacts: true
+  field_pledge_logo: true
+  field_pledge_milestones: true
+  field_pledge_multi_logos: true
+  field_pledge_national_scope: true
+  field_pledge_old_id: true
   field_pledge_organizations: true
+  field_pledge_qualitative_impact: true
+  field_pledge_roadmap_start_date: true
+  field_pledge_short_description: true
+  field_pledge_twitter: true
+  field_pledge_website: true

@@ -1,0 +1,17 @@
+uuid: 1f8e9d6f-a304-46fa-b781-d62a9c2868fd
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - pledge_import
+_core:
+  default_config_hash: zOpuPFQ-nDTNULPoK1Vy9IGh3Vc2IocL4d_1f_PNSSc
+id: pledge
+label: 'Pledge Imports'
+description: 'Pledge importers to get pledges content.'
+source_type: 'Custom tables, csv'
+module: null
+shared_configuration:
+  source:
+    key: migrate

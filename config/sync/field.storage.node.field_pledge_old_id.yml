@@ -1,19 +1,19 @@
-uuid: 36c06753-dd64-4d5f-b06f-bb8860b1869b
+uuid: 58f485fd-43a1-44fa-b517-6af01a17c96d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_pledge_organizations
-field_name: field_pledge_organizations
+id: node.field_pledge_old_id
+field_name: field_pledge_old_id
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: taxonomy_term
+  unsigned: false
+  size: normal
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

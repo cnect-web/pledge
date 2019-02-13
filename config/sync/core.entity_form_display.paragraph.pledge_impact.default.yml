@@ -10,7 +10,7 @@ dependencies:
     - field.field.paragraph.pledge_impact.field_pledge_last_update
     - paragraphs.paragraphs_type.pledge_impact
   module:
-    - datetime
+    - single_datetime
 id: paragraph.pledge_impact.default
 targetEntityType: paragraph
 bundle: pledge_impact
@@ -50,9 +50,21 @@ content:
     region: content
   field_pledge_last_update:
     weight: 4
-    settings: {  }
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      allowed_hours: ''
+      disable_days: {  }
+      exclude_date: ''
+      inline: false
+      mask: false
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: single_date_time_widget
     region: content
 hidden:
   created: true

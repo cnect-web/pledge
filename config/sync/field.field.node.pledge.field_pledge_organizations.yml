@@ -1,13 +1,11 @@
-uuid: 2c954215-d453-4b6d-9784-15bf555b85b7
+uuid: 3b05374c-bdc8-45a2-b88a-6572d70796cd
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_pledge_organizations
     - node.type.pledge
-    - paragraphs.paragraphs_type.pledge_organization
-  module:
-    - entity_reference_revisions
+    - taxonomy.vocabulary.pledge_organizations
 id: node.pledge.field_pledge_organizations
 field_name: field_pledge_organizations
 entity_type: node
@@ -19,19 +17,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:paragraph'
+  handler: 'default:taxonomy_term'
   handler_settings:
-    negate: 0
     target_bundles:
-      pledge_organization: pledge_organization
-    target_bundles_drag_drop:
-      pledge_impact:
-        weight: 4
-        enabled: false
-      pledge_milestone:
-        weight: 5
-        enabled: false
-      pledge_organization:
-        enabled: true
-        weight: 6
-field_type: entity_reference_revisions
+      pledge_organizations: pledge_organizations
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

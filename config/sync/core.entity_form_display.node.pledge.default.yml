@@ -14,20 +14,27 @@ dependencies:
     - field.field.node.pledge.field_pledge_ds_in_education
     - field.field.node.pledge.field_pledge_funding
     - field.field.node.pledge.field_pledge_funding_add_text
-    - field.field.node.pledge.field_pledge_impact
+    - field.field.node.pledge.field_pledge_impacts
     - field.field.node.pledge.field_pledge_logo
+    - field.field.node.pledge.field_pledge_milestones
     - field.field.node.pledge.field_pledge_multi_logos
     - field.field.node.pledge.field_pledge_national_scope
+    - field.field.node.pledge.field_pledge_old_id
     - field.field.node.pledge.field_pledge_organizations
     - field.field.node.pledge.field_pledge_qualitative_impact
+    - field.field.node.pledge.field_pledge_roadmap_end_date
     - field.field.node.pledge.field_pledge_roadmap_start_date
     - field.field.node.pledge.field_pledge_short_description
+    - field.field.node.pledge.field_pledge_twitter
+    - field.field.node.pledge.field_pledge_website
     - node.type.pledge
   module:
     - content_moderation
-    - datetime
+    - inline_entity_form
+    - link
     - paragraphs
     - path
+    - single_datetime
     - telephone
     - text
 id: node.pledge.default
@@ -37,12 +44,12 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_pledge_contact_email:
-    weight: 138
+    weight: 26
     settings:
       size: 60
       placeholder: ''
@@ -50,7 +57,7 @@ content:
     type: email_default
     region: content
   field_pledge_contact_name:
-    weight: 137
+    weight: 25
     settings:
       size: 60
       placeholder: ''
@@ -58,14 +65,14 @@ content:
     type: string_textfield
     region: content
   field_pledge_contact_telephone:
-    weight: 139
+    weight: 27
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: telephone_default
     region: content
   field_pledge_countries:
-    weight: 122
+    weight: 28
     settings:
       match_operator: CONTAINS
       size: 60
@@ -74,7 +81,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_pledge_description:
-    weight: 125
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -82,61 +89,105 @@ content:
     type: text_textarea
     region: content
   field_pledge_ds_for_all_citizens:
-    weight: 131
+    weight: 18
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_pledge_ds_for_labour:
-    weight: 130
+    weight: 17
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_pledge_ds_ict_professional:
-    weight: 128
+    weight: 15
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_pledge_ds_in_education:
-    weight: 129
+    weight: 16
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_pledge_funding:
-    weight: 134
+    weight: 21
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_pledge_funding_add_text:
-    weight: 135
+    weight: 22
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_pledge_impact:
+  field_pledge_impacts:
     type: entity_reference_paragraphs
-    weight: 123
+    weight: 31
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: pledge_impact
     third_party_settings: {  }
     region: content
   field_pledge_logo:
-    weight: 127
+    weight: 11
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+    region: content
+  field_pledge_milestones:
+    type: entity_reference_paragraphs
+    weight: 30
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: pledge_milestone
+    third_party_settings: {  }
+    region: content
+  field_pledge_multi_logos:
+    weight: 12
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_pledge_national_scope:
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_pledge_old_id:
+    weight: 32
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_pledge_organizations:
+    weight: 29
     settings:
       match_operator: CONTAINS
       size: 60
@@ -144,62 +195,90 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_pledge_multi_logos:
-    weight: 140
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_pledge_national_scope:
-    weight: 133
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_pledge_organizations:
-    type: entity_reference_paragraphs
-    weight: 124
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    region: content
   field_pledge_qualitative_impact:
-    weight: 132
+    weight: 19
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_pledge_roadmap_end_date:
+    weight: 24
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      allowed_hours: ''
+      exclude_date: ''
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
+      disable_days:
+        1: 0
+        2: 0
+        3: 0
+        4: 0
+        5: 0
+        6: 0
+        7: 0
+      inline: 0
+      mask: 0
+    third_party_settings: {  }
+    type: single_date_time_widget
     region: content
   field_pledge_roadmap_start_date:
-    weight: 136
-    settings: {  }
+    weight: 23
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      allowed_hours: ''
+      disable_days: {  }
+      exclude_date: ''
+      inline: false
+      mask: false
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: single_date_time_widget
     region: content
   field_pledge_short_description:
-    weight: 126
+    weight: 9
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
+  field_pledge_twitter:
+    weight: 13
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pledge_website:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   moderation_state:
     type: moderation_state_default
-    weight: 100
+    weight: 7
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -207,26 +286,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 8
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -234,7 +313,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
@@ -242,8 +321,8 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

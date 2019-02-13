@@ -1,0 +1,34 @@
+uuid: b535210c-953c-40de-aeb5-43223dde4222
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - pledge_import
+_core:
+  default_config_hash: q2VYwMpHxSd62UJ7rpwtOg1VdsgeMv6xix1wOqtcImk
+id: pledge_country_term
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - pledge
+migration_group: pledge
+label: 'Pledge countries'
+source:
+  plugin: pledge_country_term
+process:
+  vid:
+    plugin: default_value
+    default_value: pledge_countries
+  id: id_country
+  name: country
+  field_pledge_eu28: eu28
+  field_pledge_iso: iso
+  field_pledge_national_website: national_pledge_website
+  field_pledge_nuts_id: nuts_id
+  field_pledge_order: col_order
+  field_pledge_show_in_list: show_in_list
+destination:
+  plugin: 'entity:taxonomy_term'
+migration_dependencies: null

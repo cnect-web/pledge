@@ -1,18 +1,18 @@
-uuid: ea888169-15f0-452e-8319-5c9ffe4fcd24
+uuid: ae1ad432-ab26-4f5b-b6ff-6c5b6ce6d99a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_pledge_impact
+    - field.storage.node.field_pledge_impacts
     - node.type.pledge
     - paragraphs.paragraphs_type.pledge_impact
   module:
     - entity_reference_revisions
-id: node.pledge.field_pledge_impact
-field_name: field_pledge_impact
+id: node.pledge.field_pledge_impacts
+field_name: field_pledge_impacts
 entity_type: node
 bundle: pledge
-label: Impact
+label: Impacts
 description: ''
 required: false
 translatable: false
@@ -27,5 +27,8 @@ settings:
     target_bundles_drag_drop:
       pledge_impact:
         enabled: true
-        weight: 2
+        weight: 3
+      pledge_milestone:
+        weight: 4
+        enabled: false
 field_type: entity_reference_revisions

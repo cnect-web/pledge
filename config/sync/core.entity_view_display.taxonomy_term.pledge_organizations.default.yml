@@ -1,0 +1,43 @@
+uuid: 1ee56989-5def-4194-9165-1cd80cec6c36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pledge_organizations.field_pledge_description
+    - field.field.taxonomy_term.pledge_organizations.field_pledge_website
+    - taxonomy.vocabulary.pledge_organizations
+  module:
+    - link
+    - text
+id: taxonomy_term.pledge_organizations.default
+targetEntityType: taxonomy_term
+bundle: pledge_organizations
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pledge_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pledge_website:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

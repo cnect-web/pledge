@@ -1,13 +1,13 @@
-uuid: 622fadf6-5810-419f-90a3-4e9277b30f7c
+uuid: 07a59a6d-ca35-4fc2-8127-1eaf847bca52
 langcode: en
 status: true
 dependencies:
   module:
     - link
-    - paragraphs
-id: paragraph.field_pledge_org_website
-field_name: field_pledge_org_website
-entity_type: paragraph
+    - taxonomy
+id: taxonomy_term.field_pledge_website
+field_name: field_pledge_website
+entity_type: taxonomy_term
 type: link
 settings: {  }
 module: link

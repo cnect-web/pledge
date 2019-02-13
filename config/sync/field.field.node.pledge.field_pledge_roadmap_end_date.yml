@@ -1,0 +1,21 @@
+uuid: 5efb29a2-759c-4a0f-9c19-300ccc8f1f06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_roadmap_end_date
+    - node.type.pledge
+  module:
+    - datetime
+id: node.pledge.field_pledge_roadmap_end_date
+field_name: field_pledge_roadmap_end_date
+entity_type: node
+bundle: pledge
+label: 'Roadmap end date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

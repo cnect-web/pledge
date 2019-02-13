@@ -1,0 +1,23 @@
+uuid: bf304191-5fae-4064-a57e-aa25e077d324
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_old_id
+    - node.type.pledge
+id: node.pledge.field_pledge_old_id
+field_name: field_pledge_old_id
+entity_type: node
+bundle: pledge
+label: 'Old id'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

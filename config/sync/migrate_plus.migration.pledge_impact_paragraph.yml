@@ -1,0 +1,30 @@
+uuid: d26c65ea-9f8d-4bf1-806d-d9644b330b7a
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - pledge_import
+id: pledge_impact_paragraph
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - pledge
+migration_group: pledge
+label: 'Pledge impacts'
+source:
+  plugin: pledge_impact_paragraph
+process:
+  type:
+    plugin: default_value
+    default_value: pledge_impact
+  field_pledge_indicator_name: indicator_name
+  field_pledge_indicator_desc: indicator_desc
+  field_pledge_indicator_status: indicator_status
+  field_pledge_indicator_target: indicator_target
+  field_pledge_last_update: last_update
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: paragraph_type
+migration_dependencies: null

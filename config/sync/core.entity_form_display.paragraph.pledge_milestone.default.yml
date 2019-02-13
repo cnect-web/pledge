@@ -9,7 +9,7 @@ dependencies:
     - field.field.paragraph.pledge_milestone.field_pledge_milestone_status
     - paragraphs.paragraphs_type.pledge_milestone
   module:
-    - datetime
+    - single_datetime
 id: paragraph.pledge_milestone.default
 targetEntityType: paragraph
 bundle: pledge_milestone
@@ -17,15 +17,46 @@ mode: default
 content:
   field_pledge_completion_date:
     weight: 1
-    settings: {  }
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      allowed_hours: ''
+      disable_days: {  }
+      exclude_date: ''
+      inline: false
+      mask: false
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: single_date_time_widget
     region: content
   field_pledge_last_update:
     weight: 3
-    settings: {  }
+    settings:
+      hour_format: 24h
+      allow_times: '15'
+      allowed_hours: ''
+      exclude_date: ''
+      datetimepicker_theme: default
+      min_date: ''
+      max_date: ''
+      year_start: ''
+      year_end: ''
+      disable_days:
+        1: 0
+        2: 0
+        3: 0
+        4: 0
+        5: 0
+        6: 0
+        7: 0
+      inline: 0
+      mask: 0
     third_party_settings: {  }
-    type: datetime_default
+    type: single_date_time_widget
     region: content
   field_pledge_milestone_name:
     weight: 0

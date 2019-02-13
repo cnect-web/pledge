@@ -18,6 +18,7 @@ module:
   contextual: 0
   ctools: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
@@ -27,6 +28,7 @@ module:
   file: 0
   filter: 0
   image: 0
+  inline_entity_form: 0
   layout_discovery: 0
   link: 0
   mail_login: 0
@@ -36,6 +38,7 @@ module:
   migrate: 0
   migrate_drupal: 0
   migrate_plus: 0
+  migrate_source_csv: 0
   migrate_tools: 0
   nocurrent_pass: 0
   node: 0
@@ -43,6 +46,7 @@ module:
   page_cache: 0
   path: 0
   permissions_filter: 0
+  pledge_import: 0
   quickedit: 0
   redirect: 0
   redirect_404: 0

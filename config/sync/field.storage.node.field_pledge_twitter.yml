@@ -1,14 +1,16 @@
-uuid: 8105d8de-6bac-416a-b577-17b5e63076ea
+uuid: 6bf95941-a665-41ce-8ebc-cc6f60fcfadb
 langcode: en
 status: true
 dependencies:
   module:
-    - paragraphs
-id: paragraph.field_pledge_org_description
-field_name: field_pledge_org_description
-entity_type: paragraph
-type: string_long
+    - node
+id: node.field_pledge_twitter
+field_name: field_pledge_twitter
+entity_type: node
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false

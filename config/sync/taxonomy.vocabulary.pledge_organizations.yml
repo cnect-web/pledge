@@ -1,0 +1,9 @@
+uuid: 135aa932-6b9e-49c6-a043-57bb185552de
+langcode: en
+status: true
+dependencies: {  }
+name: Organizations
+vid: pledge_organizations
+description: ''
+hierarchy: 0
+weight: 0

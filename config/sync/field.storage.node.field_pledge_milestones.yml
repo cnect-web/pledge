@@ -1,4 +1,4 @@
-uuid: 71eb83c8-d8a9-4765-8983-026c5d5243c7
+uuid: fdeab7a4-dbff-4b91-ad69-a1593049a36b
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_pledge_impact
-field_name: field_pledge_impact
+id: node.field_pledge_milestones
+field_name: field_pledge_milestones
 entity_type: node
 type: entity_reference_revisions
 settings:

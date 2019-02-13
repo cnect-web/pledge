@@ -1,0 +1,25 @@
+uuid: 8e3a2709-807f-4a31-9517-edb164412557
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_description
+    - taxonomy.vocabulary.pledge_organizations
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    plain_text: '0'
+id: taxonomy_term.pledge_organizations.field_pledge_description
+field_name: field_pledge_description
+entity_type: taxonomy_term
+bundle: pledge_organizations
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
