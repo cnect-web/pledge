@@ -1,0 +1,114 @@
+id: pledge_node
+label: Pledges
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_node
+destination:
+  plugin: entity:node
+process:
+  # Hardcode the destination node type (bundle) as 'migrate_example_beer'.
+  type:
+    plugin: default_value
+    default_value: pledge
+  title: organization_name
+  created:
+    plugin: callback
+    source: created
+    callable: strtotime
+  changed:
+    plugin: callback
+    source: updated
+    callable: strtotime
+  status:
+    plugin: default_value
+    default_value: 1
+  field_pledge_website: website
+  field_pledge_twitter: twitter
+  field_pledge_logo: logo_filename
+  field_pledge_short_description: short_desc
+  field_pledge_description: description
+  field_pledge_ds_for_all_citizens: flag_digital_skill_for_all
+  field_pledge_ds_for_labour: flag_digital_skill_for_labour
+  field_pledge_ds_ict_professional: flag_ict_professional
+  field_pledge_ds_in_education: flag_digital_skill_edu
+  field_pledge_qualitative_impact: qualitative_impact
+  field_pledge_national_scope: national_scope
+  field_pledge_funding: funding
+  field_pledge_funding_add_text: funding_additional_text
+  field_pledge_roadmap_start_date: roadmap_start_date
+  field_pledge_roadmap_end_date: roadmap_stop_date
+  field_pledge_contact_name: contact_name
+  field_pledge_contact_email: contact_email
+  field_pledge_contact_telephone: contact_tel
+  field_pledge_multi_logos: logo_multiorg
+  field_pledge_old_id: id_pledge
+
+  field_pledge_countries:
+    plugin: migration_lookup
+    migration: pledge_country_term
+    source: countries
+  field_pledge_organizations:
+    plugin: migration_lookup
+    migration: pledge_organization_term
+    source: organizations
+
+  field_pledge_impacts:
+    plugin: sub_process
+    source: impacts
+    process:
+      impact_temp_ids:
+        plugin: migration_lookup
+        migration: pledge_impact_paragraph
+        source: id_impact
+      target_id:
+        plugin: extract
+        source: '@impact_temp_ids'
+        index:
+          - '0'
+      target_revision_id:
+        plugin: extract
+        source: '@impact_temp_ids'
+        index:
+          - '1'
+
+  field_pledge_milestones:
+    plugin: sub_process
+    source: milestones
+    process:
+      milestone_temp_ids:
+        plugin: migration_lookup
+        migration: pledge_milestone_paragraph
+        no_stub: true
+        source: id_milestone
+      target_id:
+        plugin: extract
+        source: '@milestone_temp_ids'
+        index:
+          - '0'
+      target_revision_id:
+        plugin: extract
+        source: '@milestone_temp_ids'
+        index:
+          - '1'
+
+  'field_pledge_logo/target_id':
+    plugin: migration_lookup
+    migration: pledge_logo_media
+    source: id_pledge
+
+  'field_image/alt': organization_name
+
+migration_dependencies:
+  required:
+    - pledge_country_term
+    - pledge_organization_term
+    - pledge_impact_paragraph
+    - pledge_milestone_paragraph
+    - pledge_logo_media
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import

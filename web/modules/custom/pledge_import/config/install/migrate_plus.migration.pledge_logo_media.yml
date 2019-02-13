@@ -1,0 +1,31 @@
+id: pledge_logo_media
+label: Pledge media logos.
+migration_group: pledge
+
+# Source.
+source:
+  plugin: pledge_logo
+# Destination.
+destination:
+  # We will be creating entities of type "file" this time.
+  plugin: 'entity:media'
+# Mappings.
+process:
+  bundle:
+    plugin: default_value
+    default_value: pledge_image
+  name: organization_name
+  'field_media_image/target_id':
+      plugin: migration_lookup
+      migration: pledge_logo
+      source: id_pledge
+  'field_media_image/title': organization_name
+  'field_media_image/alt': organization_name
+  status:
+    plugin: default_value
+    default_value: 1
+# Dependencies.
+dependencies:
+  enforced:
+    module:
+      - pledge_import

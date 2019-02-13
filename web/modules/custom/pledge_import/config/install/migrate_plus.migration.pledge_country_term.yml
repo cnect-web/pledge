@@ -1,0 +1,27 @@
+id: pledge_country_term
+label: Pledge countries
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_country_term
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+      plugin: default_value
+      default_value: pledge_countries
+  id: id_country
+  name: country
+  field_pledge_eu28: eu28
+  field_pledge_iso: iso
+  field_pledge_national_website: national_pledge_website
+  field_pledge_nuts_id: nuts_id
+  field_pledge_order: col_order
+  field_pledge_show_in_list: show_in_list
+
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import

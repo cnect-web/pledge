@@ -1,0 +1,24 @@
+id: pledge_impact_paragraph
+label: Pledge impacts
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_impact_paragraph
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: paragraph_type
+process:
+  type:
+    plugin: default_value
+    default_value: pledge_impact
+  field_pledge_indicator_name: indicator_name
+  field_pledge_indicator_desc: indicator_desc
+  field_pledge_indicator_status: indicator_status
+  field_pledge_indicator_target: indicator_target
+  field_pledge_last_update: last_update
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import

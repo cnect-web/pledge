@@ -1,0 +1,22 @@
+id: pledge_organization_term
+label: Pledge organizations
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_organization_term
+destination:
+  plugin: entity:taxonomy_term
+process:
+  vid:
+      plugin: default_value
+      default_value: pledge_organizations
+  id: id_org
+  name: org_name
+  field_pledge_description: org_description
+  field_pledge_website: org_website
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import

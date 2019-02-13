@@ -1,0 +1,7 @@
+name: 'Pledge import'
+type: module
+description: 'Pledge import'
+core: 8.x
+package: 'Pledge'
+dependencies:
+  - migrate_plus

@@ -1,0 +1,50 @@
+id: pledge_logo
+label: Pledge logos.
+migration_group: pledge
+
+# Source.
+source:
+  plugin: pledge_logo
+  constants:
+    file_source_uri: public://migrate
+    file_dest_uri: 'public://pledges'
+# Destination.
+destination:
+  # We will be creating entities of type "file" this time.
+  plugin: 'entity:file'
+# Mappings.
+process:
+  file_source:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_source_uri
+        - logo_filename
+    # Make sure we don't have any url-unfriendly characters.
+    -
+      plugin: urlencode
+  file_dest:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/file_dest_uri
+        - logo_filename
+    -
+      plugin: urlencode
+
+  filename: organization_name
+  uri:
+    plugin: file_copy
+    source:
+      - '@file_source'
+      - '@file_dest'
+  status:
+    plugin: default_value
+    default_value: 1
+# Dependencies.
+dependencies:
+  enforced:
+    module:
+      - pledge_import

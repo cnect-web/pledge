@@ -792,6 +792,17 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 
+$databases['migrate']['default'] = array (
+  'database' => 'pledge',
+  'username' => getenv('DATABASE_USER'),
+  'password' => getenv('DATABASE_PASSWORD'),
+  'prefix' => getenv('DATABASE_PREFIX'),
+  'host' => getenv('DATABASE_HOST'),
+  'port' => getenv('DATABASE_PORT'),
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
 /**
  * Config directories.
  */

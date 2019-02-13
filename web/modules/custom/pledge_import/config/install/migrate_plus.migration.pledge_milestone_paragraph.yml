@@ -1,0 +1,30 @@
+id: pledge_milestone_paragraph
+label: Pledge impacts
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_milestone_paragraph
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: paragraph_type
+process:
+  type:
+    plugin: default_value
+    default_value: pledge_milestone
+  field_pledge_milestone_name: milestone_name
+  field_pledge_completion_date: completion_date
+  field_pledge_milestone_status:
+      plugin: migration_lookup
+      migration: pledge_milestone_statuses
+      source: status
+  field_pledge_last_update: last_update
+
+migration_dependencies:
+  required:
+    - pledge_milestone_statuses
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import
