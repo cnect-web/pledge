@@ -27,8 +27,7 @@ class PledgeLogo extends SqlBase {
    */
   public function query() {
     $query = $this->select('pledge', 'i')
-      ->fields('i', array_keys($this->getFields()))
-      ->condition('id_pledge', 44);
+      ->fields('i', array_keys($this->getFields()));
     return $query;
   }
 
