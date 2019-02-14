@@ -1,0 +1,27 @@
+uuid: 8a66160d-db4d-41c5-b0e2-ee2a73c3095c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_pledge_name
+  module:
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_pledge_name:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  member_for:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

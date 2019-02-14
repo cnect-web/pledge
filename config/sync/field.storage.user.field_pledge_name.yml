@@ -1,0 +1,21 @@
+uuid: da7d921a-68ab-4850-8009-c4ec8d44718b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_pledge_name
+field_name: field_pledge_name
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
