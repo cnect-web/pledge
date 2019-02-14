@@ -36,6 +36,7 @@ class PledgeNode extends SqlBase {
       'contact_name' => $this->t('Contact name'),
       'contact_email' => $this->t('Contact email'),
       'contact_tel' => $this->t('Contact telephone'),
+      'passwd' => $this->t('Password'),
       'created' => $this->t('Created'),
       'updated' => $this->t('Updated'),
       'logo_multiorg' => $this->t('Multiple logos'),

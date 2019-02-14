@@ -1,0 +1,27 @@
+id: pledge_user
+label: Users
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_user
+destination:
+  plugin: entity:user
+  md5_passwords: true
+process:
+  pass: password
+  mail: contact_email
+  init: contact_email
+  name: contact_email
+  status:
+    plugin: default_value
+    default_value: 1
+  roles:
+    plugin: default_value
+    default_value: 2
+  field_pledge_name: name
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import
