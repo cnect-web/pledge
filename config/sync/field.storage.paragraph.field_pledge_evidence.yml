@@ -1,0 +1,19 @@
+uuid: e36d7806-1b89-4ab6-9d1b-c686635243c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_pledge_evidence
+field_name: field_pledge_evidence
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

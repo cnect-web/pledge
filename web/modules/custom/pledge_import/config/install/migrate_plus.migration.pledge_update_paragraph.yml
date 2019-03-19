@@ -1,0 +1,29 @@
+id: pledge_update_paragraph
+label: Pledge updates
+migration_group: pledge
+migration_tags:
+  - pledge
+source:
+  plugin: pledge_update_paragraph
+destination:
+  plugin: entity_reference_revisions:paragraph
+  default_bundle: paragraph_type
+process:
+  type:
+    plugin: default_value
+    default_value: pledge_update
+  field_pledge_evidence: evidence
+  field_pledge_status:
+      plugin: migration_lookup
+      migration: pledge_statuses
+      source: id_status
+  field_pledge_last_update: last_date
+
+migration_dependencies:
+  required:
+    - pledge_statuses
+
+dependencies:
+  enforced:
+    module:
+      - pledge_import

@@ -1,0 +1,56 @@
+{{ page.main_menu }}
+<div class="container">
+    <div class="page">
+        <h1>
+            {% if page.title %}
+                {{ page.title }}
+            {% elseif node.label %}
+                {{ node.label }}
+            {% endif %}
+        </h1>
+        <div class="h1-border"></div>
+
+        {{ page.breadcrumbs }}
+
+        <div class="row" id="home-about">
+            <div class="col-xs-12 col-sm-9">
+                <h2>{{ page.title }}</h2>
+                {{ page.content }}
+            </div>
+
+            <div class="col-xs-12 col-sm-3 numbers">
+                {{ page.members }}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid cont-footer-1">
+    <footer class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-3 col-md-8 col-lg-8"></div>
+                <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                    <div class="footer-logo"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="container-fluid cont-footer-2">
+    <div class="container">
+        {{ page.footer_menu }}
+        <p>&copy; {{ 'Copyright Pledge Viewers'|t }} {{ "now"|date("Y") }} - {{ 'Some rights reserved'|t }}.</p>
+    </div>
+</div>
+
+
+<div class="cookie-disclaimer">
+    <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
+    <div class="container">
+        {{ page.cookies_text }}
+        <button type="button" class="btn btn-success accept-cookie">Ok, please continue!</button>
+    </div>
+</div>

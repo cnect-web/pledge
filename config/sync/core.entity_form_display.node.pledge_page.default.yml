@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.pledge_page.body
     - node.type.pledge_page
   module:
+    - allowed_formats
     - content_moderation
     - path
     - text
@@ -19,9 +20,12 @@ content:
     weight: 121
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
-    third_party_settings: {  }
+      summary_rows: 3
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
     region: content
   created:
     type: datetime_timestamp
@@ -81,7 +85,7 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

@@ -1,0 +1,41 @@
+uuid: 73a0f0ed-a867-4f1a-9fcd-226cdf9f9e07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pledge_update.field_pledge_evidence
+    - field.field.paragraph.pledge_update.field_pledge_last_update
+    - field.field.paragraph.pledge_update.field_pledge_status
+    - paragraphs.paragraphs_type.pledge_update
+  module:
+    - datetime
+id: paragraph.pledge_update.default
+targetEntityType: paragraph
+bundle: pledge_update
+mode: default
+content:
+  field_pledge_evidence:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_pledge_last_update:
+    weight: 0
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_pledge_status:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

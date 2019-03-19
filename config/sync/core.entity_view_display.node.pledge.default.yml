@@ -26,13 +26,16 @@ dependencies:
     - field.field.node.pledge.field_pledge_roadmap_start_date
     - field.field.node.pledge.field_pledge_short_description
     - field.field.node.pledge.field_pledge_twitter
+    - field.field.node.pledge.field_pledge_updates
     - field.field.node.pledge.field_pledge_website
+    - field.field.node.pledge.field_test
     - node.type.pledge
   module:
     - datetime
     - entity_reference_revisions
     - link
     - options
+    - telephone
     - text
     - user
 id: node.pledge.default
@@ -42,14 +45,14 @@ mode: default
 content:
   field_pledge_contact_email:
     weight: 118
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_pledge_contact_name:
     weight: 117
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -57,14 +60,15 @@ content:
     region: content
   field_pledge_contact_telephone:
     weight: 119
-    label: above
-    settings: {  }
+    label: hidden
+    settings:
+      title: ''
     third_party_settings: {  }
-    type: basic_string
+    type: telephone_link
     region: content
   field_pledge_countries:
     weight: 102
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -72,14 +76,14 @@ content:
     region: content
   field_pledge_description:
     weight: 105
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_pledge_ds_for_all_citizens:
     weight: 111
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -89,7 +93,7 @@ content:
     region: content
   field_pledge_ds_for_labour:
     weight: 110
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -99,7 +103,7 @@ content:
     region: content
   field_pledge_ds_ict_professional:
     weight: 108
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -109,7 +113,7 @@ content:
     region: content
   field_pledge_ds_in_education:
     weight: 109
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -119,14 +123,14 @@ content:
     region: content
   field_pledge_funding:
     weight: 114
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_pledge_funding_add_text:
     weight: 115
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
@@ -134,7 +138,7 @@ content:
   field_pledge_impacts:
     type: entity_reference_revisions_entity_view
     weight: 127
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -143,7 +147,7 @@ content:
   field_pledge_logo:
     type: entity_reference_entity_view
     weight: 107
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: false
@@ -152,7 +156,7 @@ content:
   field_pledge_milestones:
     type: entity_reference_revisions_entity_view
     weight: 126
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -160,7 +164,7 @@ content:
     region: content
   field_pledge_multi_logos:
     weight: 120
-    label: above
+    label: hidden
     settings:
       format: default
       format_custom_false: ''
@@ -170,14 +174,14 @@ content:
     region: content
   field_pledge_national_scope:
     weight: 113
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   field_pledge_old_id:
     weight: 128
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -186,7 +190,7 @@ content:
     region: content
   field_pledge_organizations:
     weight: 122
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -194,14 +198,14 @@ content:
     region: content
   field_pledge_qualitative_impact:
     weight: 112
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_pledge_roadmap_end_date:
     weight: 129
-    label: above
+    label: hidden
     settings:
       format_type: medium
       timezone_override: ''
@@ -210,7 +214,7 @@ content:
     region: content
   field_pledge_roadmap_start_date:
     weight: 116
-    label: above
+    label: hidden
     settings:
       format_type: medium
       timezone_override: ''
@@ -219,22 +223,31 @@ content:
     region: content
   field_pledge_short_description:
     weight: 106
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_pledge_twitter:
     weight: 124
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_pledge_updates:
+    type: entity_reference_revisions_entity_view
+    weight: 130
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
   field_pledge_website:
     weight: 125
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -244,9 +257,16 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  links:
-    weight: 100
+  field_test:
+    weight: 131
+    label: above
     settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

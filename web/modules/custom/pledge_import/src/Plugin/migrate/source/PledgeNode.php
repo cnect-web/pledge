@@ -104,7 +104,6 @@ class PledgeNode extends SqlBase {
       ->condition('id_pledge', $row->getSourceProperty('id_pledge'))
       ->execute()
       ->fetchAll();
-    var_dump($terms);
     $row->setSourceProperty('impacts', $terms);
 
     // Extract milestones.
@@ -113,7 +112,19 @@ class PledgeNode extends SqlBase {
       ->condition('id_pledge', $row->getSourceProperty('id_pledge'))
       ->execute()
       ->fetchAll();
+
     $row->setSourceProperty('milestones', $terms);
+
+    // Extract updates.
+    $terms = $this->select('pledge_status', 's')
+      ->fields('s', ['id_pledge_status'])
+      ->condition('id_pledge', $row->getSourceProperty('id_pledge'))
+      ->execute()
+      ->fetchAll();
+
+    if (!empty($terms)) {
+      $row->setSourceProperty('updates', $terms);
+    }
 
     $row->setSourceProperty('roadmap_start_date', date('Y-m-d\TH:i:s', strtotime($row->getSourceProperty('roadmap_start_date'))));
     $row->setSourceProperty('roadmap_stop_date', date('Y-m-d\TH:i:s', strtotime($row->getSourceProperty('roadmap_stop_date'))));

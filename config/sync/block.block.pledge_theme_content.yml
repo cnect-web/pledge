@@ -1,0 +1,22 @@
+uuid: a9772972-6359-488d-9186-6334a6e0b6af
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - pledge_theme
+_core:
+  default_config_hash: 80N66GdzEvwqi1m-_GZ-ulkk8AJG9beoXcZ4-pMVKjI
+id: pledge_theme_content
+theme: pledge_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

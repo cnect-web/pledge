@@ -1,0 +1,37 @@
+uuid: aa9f809e-e089-4ff5-b660-673407929670
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_updates
+    - node.type.pledge
+    - paragraphs.paragraphs_type.pledge_update
+  module:
+    - entity_reference_revisions
+id: node.pledge.field_pledge_updates
+field_name: field_pledge_updates
+entity_type: node
+bundle: pledge
+label: Updates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      pledge_update: pledge_update
+    target_bundles_drag_drop:
+      pledge_impact:
+        weight: 4
+        enabled: false
+      pledge_milestone:
+        weight: 5
+        enabled: false
+      pledge_update:
+        enabled: true
+        weight: 6
+field_type: entity_reference_revisions

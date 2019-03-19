@@ -1,0 +1,36 @@
+uuid: 93329d06-7723-454a-b9e1-d098e8d6c62c
+langcode: en
+status: true
+dependencies:
+  module:
+    - twitter_block
+  theme:
+    - pledge_theme
+id: twitterblock
+theme: pledge_theme
+region: twitter
+weight: 0
+provider: null
+plugin: twitter_block
+settings:
+  id: twitter_block
+  label: 'Twitter block'
+  provider: twitter_block
+  label_display: '0'
+  username: DigitalSkillsEU
+  theme: ''
+  link_color: ''
+  width: ''
+  height: ''
+  chrome:
+    noheader: '0'
+    nofooter: '0'
+    noborders: '0'
+    noscrollbar: '0'
+    transparent: '0'
+  border_color: ''
+  language: ''
+  tweet_limit: '3'
+  related: ''
+  polite: polite
+visibility: {  }

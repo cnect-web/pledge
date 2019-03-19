@@ -1,0 +1,6 @@
+services:
+  pledge_core.breadcrumb:
+    class: Drupal\pledge_core\Breadcrumb\PledgeBreadcrumbBuilder
+
+    tags:
+      - { name: breadcrumb_builder, priority: 100 }

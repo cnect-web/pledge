@@ -1,0 +1,20 @@
+uuid: 447feed4-bde9-4d44-9045-a8f3849d10d5
+langcode: en
+status: true
+dependencies:
+  theme:
+    - pledge_theme
+_core:
+  default_config_hash: ik4PTMlBD0MWansnSMpSXq5SUlWRJ1IVVt6C7AIbQmc
+id: pledge_theme_local_actions
+theme: pledge_theme
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

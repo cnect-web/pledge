@@ -1,0 +1,19 @@
+name: Pledge theme
+type: theme
+description: 'Pledge theme'
+package: Pledge
+core: 8.x
+libraries:
+  - pledge_theme/global-styling
+ 
+base theme: stable
+
+regions:
+  content: Content
+  header: Header
+  footer: Footer
+  side_bar: Side bar
+  main_menu: Main menu
+  footer_menu: Footer menu
+  latest: Latest items
+  twitter: Twitter

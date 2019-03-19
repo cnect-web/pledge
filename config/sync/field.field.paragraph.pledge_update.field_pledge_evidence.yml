@@ -1,0 +1,19 @@
+uuid: 070ca542-bdac-4d7b-b245-58a085bb0ef2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_evidence
+    - paragraphs.paragraphs_type.pledge_update
+id: paragraph.pledge_update.field_pledge_evidence
+field_name: field_pledge_evidence
+entity_type: paragraph
+bundle: pledge_update
+label: Evidence
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

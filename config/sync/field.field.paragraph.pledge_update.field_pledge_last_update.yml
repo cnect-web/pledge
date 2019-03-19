@@ -1,0 +1,21 @@
+uuid: d9ac4451-93ee-49f3-8c23-47a49903320a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_last_update
+    - paragraphs.paragraphs_type.pledge_update
+  module:
+    - datetime
+id: paragraph.pledge_update.field_pledge_last_update
+field_name: field_pledge_last_update
+entity_type: paragraph
+bundle: pledge_update
+label: 'Last update'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

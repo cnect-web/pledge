@@ -1,0 +1,5 @@
+name: 'Pledge core'
+type: module
+description: 'Pledge core'
+core: 8.x
+package: 'pledge'

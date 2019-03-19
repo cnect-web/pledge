@@ -1,0 +1,20 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      bootstrap/css/bootstrap.min.css: {}
+      bootstrap/css/bootstrap-theme.min.css: {}
+      font-awesome/css/font-awesome.min.css: {}
+      css/public.css: {}
+      https://fonts.googleapis.com/css?family=Roboto:300,400,700: { type: external }
+  js:
+    bootstrap/js/bootstrap.min.js: {}
+    js/general.js: {}
+
+pledge_page:
+  version: 1.x
+  js:
+    js/raphael.2.1.0.min.js: {}
+    js/justgauge.custom.js: {}
+    shadowbox/shadowbox.js: {}
+    js/pledge.js: {}

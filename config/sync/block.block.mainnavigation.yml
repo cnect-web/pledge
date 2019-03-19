@@ -1,0 +1,24 @@
+uuid: c03fc5c2-64c0-4b54-96cb-b69c76dda1f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - pledge_theme
+id: mainnavigation
+theme: pledge_theme
+region: main_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

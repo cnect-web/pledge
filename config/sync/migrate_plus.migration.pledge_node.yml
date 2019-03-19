@@ -100,6 +100,25 @@ process:
         source: '@milestone_temp_ids'
         index:
           - '1'
+  field_pledge_updates:
+    plugin: sub_process
+    source: updates
+    process:
+      update_temp_ids:
+        plugin: migration_lookup
+        migration: pledge_update_paragraph
+        no_stub: true
+        source: id_pledge_status
+      target_id:
+        plugin: extract
+        source: '@update_temp_ids'
+        index:
+          - '0'
+      target_revision_id:
+        plugin: extract
+        source: '@update_temp_ids'
+        index:
+          - '1'
   field_pledge_logo/target_id:
     plugin: migration_lookup
     migration: pledge_logo_media

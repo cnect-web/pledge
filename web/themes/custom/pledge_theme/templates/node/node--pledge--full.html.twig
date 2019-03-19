@@ -1,0 +1,260 @@
+<div class="pledge container">
+    <div class="row pl-description1">
+        <div class="pl-description-desc1 col-md-9">
+            <div class="pg-logo pg-logo-noborder">
+                <span class="helper"></span>
+                {% if content.field_pledge_multi_logos.value %}
+                    <a href="http://pledgeviewer.eu/assets/img/logos/collage-digital-all-exp.png" rel="shadowbox">
+                        <img class="pg-logo-img2" src="http://pledgeviewer.eu/assets/img/logos/collage-digital-all-exp.png" alt="All Digital">
+                    </a>
+                    <div class="multilogo-info"><i class="fa fa-search-plus" aria-hidden="true"></i> {{ "Click on<br>the image for details"|t }}</div>
+                {% else %}
+                    <img class="pg-logo-img2" src="http://pledgeviewer.eu/assets/img/logos/acube.jpg" alt="Academy Cube">
+                {% endif %}
+            </div>
+            <div class="pg-org">{{ content.title }}</div>
+            <div class="pg-desc-desc">
+                {{ content.field_pledge_description }}
+            </div>
+        </div>
+
+        <div class="col-md-3 pg-contact-info">
+
+            <div class="xpl-contact-name">
+                Contact: <a href="mailto:bernd.boeckenhoff@academy-cube.com">Bernd Böckenhoff</a>
+                <br>
+                Website: <a target="_blank" href="http://www.academy-cube.com/" rel="nofollow">http://www.academy-cube.com/</a>
+            </div>
+
+            <div class="xpl-last-update">
+                Last update: 26/04/2018                <br>
+                <a href="#" data-toggle="modal" data-target="#login-modal">Update this pledge</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-8">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
+                <li role="presentation"><a href="#organisations" aria-controls="organisations" role="tab" data-toggle="tab">Pledging organisation</a></li>
+                <li role="presentation"><a href="#impact" aria-controls="impact" role="tab" data-toggle="tab">Impact</a></li>
+                <li role="presentation"><a href="#progress" aria-controls="progress" role="tab" data-toggle="tab">Progress</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="description">
+
+                    <!-- Project info -->
+                    <div class="row" id="row-project-info">
+
+                        <div class="col-sm-6" id="pl-categories">
+                            <h3>Pledge Category</h3>
+                            <div class="pl-cat">
+                                <div class="cat-icon cat-icon-ict" title="Digital skills for ICT professionals"><i class="fa fa-laptop" aria-hidden="true"></i></div> Digital skills for ICT professionals
+                            </div>
+                            <div class="pl-cat">
+                                <div class="cat-icon cat-icon-labour" title="Digital skills for labour force"><i class="fa fa-male" aria-hidden="true"></i></div> Digital skills for labour force
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6" id="pl-geo-scope">
+                            <h3>Pledge's geographical scope</h3>
+                            <div id="map" class="mapboxgl-map"><div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="360" height="240" style="position: absolute; width: 360px; height: 240px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib compact"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/map-feedback/#/10.07/50.65/3" target="_blank">Improve this map</a></div></div></div></div>
+                        </div>
+
+                        <div class="col-sm-6" id="pl-time-period">
+                            <h3 class="">Time period</h3>
+                            <div class="pl-start-date pl-date">
+                                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                                <span>Start date:</span> 01/01/2017                            </div>
+                            <div class="pl-stop-date pl-date">
+                                <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
+                                <span>End date:</span> 31/12/2020                            </div>
+                        </div>
+
+
+                        <div class="col-sm-6" id="pl-other-details">
+                            <h3>Other Pledge details</h3>
+
+
+                            <div class="pl-funding"><strong>Public Funding:</strong>
+                                YES</div>
+                            <div class="pl-funding-additional">Academy Cube gGmbH has received public funding from the German Federal Ministry for Economic Affairs and Energy for the refugee platform JOIN which will be based on Academy Cube as technical solution.</div>
+                        </div>
+
+                        <!-- // fine Project info -->
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="organisations">
+
+                    <div class="organization">
+                        <h3>Academy Cube</h3>
+                        <div class="organization-desc">
+                            Academy Cube (AC) is a learning and matching platform for digital jobs with specific focus on the Science, Technology, Engineering and Mathematics (STEM) area.                        </div>
+                        <div class="organization-website">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="impact">
+
+                    <!-- Project impact -->
+                    <div class="row" id="row-project-impact">
+                        <div class="col-xs-12" id="pl-qualitative-impact">
+                            <h3>Qualitative Impact</h3>
+                            <div class="pl-qualitative-impact">• Companies and universities from all over Europe provide learning content and jobs<br>
+                                • Combining learning content from multiple providers to curricula and link job profiles to courses and curricula<br>
+                                • AC as certification body for key certifications supporting the skill set for the digital transformation with company-wide curricula in Cyber Security, Data Scientist, Web Developer etc.<br>
+                                • A lifelong community for learning and career development<br>
+                                • A platform for corporate-wide self-assessment of skills for the digital enterprise and for delivery of learnings &amp; certification on those skills<br>
+                                • Aligned with ESCO to provide international compatibility in skills classification (in cooperation with EU-funded project OPENSKIMR)<br>
+                                • Drive synergies and cooperation between companies as well as between industry, politics and academia<br>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12" id="pl-quantitative-impact">
+                            <h3 class="noborder">Quantitative Impact</h3>
+                            <table id="pl-table-impact" class="table table-condensed table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="col-sm-4">Indicator</th>
+                                    <th class="col-sm-4">Description</th>
+                                    <th class="col-sm-2">Target</th>
+                                    <th class="col-sm-2">Status</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td>Subscribers to the job matching platform</td>
+                                    <td>At least 500 000 registered talents by 2020</td>
+                                    <td class="text-right">500,000</td>
+                                    <td class="text-right">31762</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Online courses/trainings developed/provided</td>
+                                    <td>2,000 e-learning courses offers by 2020</td>
+                                    <td class="text-right">2,000</td>
+                                    <td class="text-right">1582</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Job placements/traineeships (including remote jobs)</td>
+                                    <td>More than 50,000 jobs available for talents by 2020</td>
+                                    <td class="text-right">50,000</td>
+                                    <td class="text-right">1538</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div role="tabpanel" class="tab-pane fade" id="progress">
+
+                    <!-- Project progress -->
+                    <div class="row" id="row-project-progress">
+                        <div class="col-sm-4" id="pl-progress-status">
+                            <h3>Pledge progress</h3>
+                            <div id="gauge2" class="200x160px"></div>
+                        </div>
+                        <div class="col-sm-8" id="pl-progress-evidence">
+                            <h3>Evidence about progress</h3>
+                            <div id="evidence-text">Huge increase in high quality e-learnings, jump from 328 (Jan. 2017) to more than 1.500 (April 2014).</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12" id="pl-milestones">
+                            <h3 class="noborder">Milestones</h3>
+                            <table id="pl-table-milestones" class="table table-condensed table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="col-sm-8">Milestone name</th>
+                                    <th class="col-sm-2">Completion date</th>
+                                    <th class="col-sm-2">Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Renewal of the former SAP pledge by Academy Cube gGmbH and creation of virtual sub platforms in key topics</td>
+                                    <td>31/12/2017</td>
+                                    <td>On Track</td>
+                                </tr>
+                                <tr>
+                                    <td>First joint event together with AC partners incl. SAP and Cisco (e.g. summer school, virtual career fair)</td>
+                                    <td>31/12/2017</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Creation of new curricula and certifications in key topics</td>
+                                    <td>01/01/2018</td>
+                                    <td>On Track</td>
+                                </tr>
+                                <tr>
+                                    <td>Creation of more sub platforms in key topics</td>
+                                    <td>01/01/2018</td>
+                                    <td>On Track</td>
+                                </tr>
+                                <tr>
+                                    <td>500 new high-quality e-learnings</td>
+                                    <td>01/01/2018</td>
+                                    <td>Completed</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of talents registered: 300.000</td>
+                                    <td>01/01/2019</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Second joint event together with AC partners incl. SAP and Cisco (e.g. summer school, virtual career
+                                        fair)</td>
+                                    <td>01/01/2019</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>STEM contest to attract more talents</td>
+                                    <td>01/01/2019</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of talents registered: 500.000</td>
+                                    <td>31/12/2020</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>2000 new high-quality e-learnings</td>
+                                    <td>31/12/2020</td>
+                                    <td>On Track</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4" id="pl-twitter">
+            <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-timeline twitter-timeline-rendered" style="position: static; visibility: visible; display: inline-block; width: 100%; height: 800px; padding: 0px; border: none; max-width: 100%; min-width: 180px; margin-top: 0px; margin-bottom: 0px; min-height: 200px;" data-widget-id="profile:AcademyCube" title="Twitter Timeline"></iframe>
+            <script>!function(d, s, id){var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location)?'http':'https'; if (!d.getElementById(id)){js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }}(document, "script", "twitter-wjs");</script>
+        </div>
+
+    </div><!-- end row -->
+</div>

@@ -1,0 +1,29 @@
+uuid: bf2a53d2-758d-4657-adb8-2151bcd4943a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pledge_status
+    - paragraphs.paragraphs_type.pledge_update
+    - taxonomy.vocabulary.pledge_statuses
+id: paragraph.pledge_update.field_pledge_status
+field_name: field_pledge_status
+entity_type: paragraph
+bundle: pledge_update
+label: Status
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pledge_statuses: pledge_statuses
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
