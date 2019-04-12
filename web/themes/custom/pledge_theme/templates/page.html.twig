@@ -1,6 +1,13 @@
 {{ page.main_menu }}
 <div class="container">
+    <div class="row">
+        {{ page.header }}
+    </div>
+</div>
+
+<div class="container">
     <div class="page">
+        {% if not is_front and (page.title or node.label) %}
         <h1>
             {% if page.title %}
                 {{ page.title }}
@@ -9,19 +16,13 @@
             {% endif %}
         </h1>
         <div class="h1-border"></div>
+        {% endif %}
 
+        {% if not is_front %}
         {{ page.breadcrumbs }}
+        {% endif %}
 
-        <div class="row" id="home-about">
-            <div class="col-xs-12 col-sm-9">
-                <h2>{{ page.title }}</h2>
-                {{ page.content }}
-            </div>
-
-            <div class="col-xs-12 col-sm-3 numbers">
-                {{ page.members }}
-            </div>
-        </div>
+        {{ page.content }}
 
     </div>
 </div>
@@ -51,6 +52,6 @@
     <div class="cookie-close accept-cookie"><i class="fa fa-times"></i></div>
     <div class="container">
         {{ page.cookies_text }}
-        <button type="button" class="btn btn-success accept-cookie">Ok, please continue!</button>
+        <button type="button" class="btn btn-success accept-cookie">{{ "Ok, please continue!"|t }}</button>
     </div>
 </div>

@@ -1,0 +1,8 @@
+pledge_core.front:
+  path: 'home'
+  defaults:
+    _controller: '\Drupal\pledge_core\Controller\FrontPageController::front'
+    _title: 'Welcome'
+  requirements:
+    _access: 'TRUE'
+

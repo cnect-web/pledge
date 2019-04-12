@@ -5,7 +5,6 @@ use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Breadcrumb\BreadcrumbBuilderInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Link;
-use Drupal\Core\Url;
 
 class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
 
@@ -28,11 +27,15 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
   public function build(RouteMatchInterface $route_match) {
     $breadcrumb = new Breadcrumb();
 
+//    var_dump($route_match->getRawParameters());
+//    var_dump($route_match->getRouteObject());
+//    exit();
+
     // Add a link to the homepage as our first crumb.
     $breadcrumb->addLink(Link::createFromRoute('Home', '<front>'));
 
     // Get the node for the current page
-    $node = \Drupal::routeMatch()->getParameter('node');
+    $node = $route_match->getParameter('node');
 
     if ($node->bundle() == 'pledge') {
       $breadcrumb->addLink(Link::createFromRoute('Pledges', 'view.pledges.page'));

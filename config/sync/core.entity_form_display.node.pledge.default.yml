@@ -28,10 +28,8 @@ dependencies:
     - field.field.node.pledge.field_pledge_twitter
     - field.field.node.pledge.field_pledge_updates
     - field.field.node.pledge.field_pledge_website
-    - field.field.node.pledge.field_test
     - node.type.pledge
   module:
-    - content_moderation
     - inline_entity_form
     - link
     - paragraphs
@@ -287,14 +285,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_test:
-    weight: 34
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
     region: content
   moderation_state:
     type: moderation_state_default

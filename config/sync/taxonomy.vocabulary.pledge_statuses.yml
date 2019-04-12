@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'Pledge statuses'
 vid: pledge_statuses
 description: ''
-hierarchy: 0
 weight: 0

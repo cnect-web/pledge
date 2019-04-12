@@ -1,0 +1,25 @@
+home_bottom_two_columns:
+  label: 'Homepage: Two columns bottom'
+  category: 'Pledge'
+  template: templates/layouts/home_bottom_two_columns
+  default_region: left_column
+  regions:
+    left_column:
+      label: Left column
+    right_column:
+      label: Right column
+  icon_map:
+    - [left_column, right_column]
+
+home_content_two_columns:
+  label: 'Homepage: Two columns content'
+  category: 'Pledge'
+  template: templates/layouts/home_content_two_columns
+  default_region: left_column
+  regions:
+    left_column:
+      label: Left column
+    right_column:
+      label: Right column
+  icon_map:
+    - [left_column, right_column]

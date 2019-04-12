@@ -60,7 +60,10 @@ hidden:
   field_pledge_old_id: true
   field_pledge_organizations: true
   field_pledge_qualitative_impact: true
+  field_pledge_roadmap_end_date: true
   field_pledge_roadmap_start_date: true
   field_pledge_short_description: true
   field_pledge_twitter: true
+  field_pledge_updates: true
   field_pledge_website: true
+  field_test: true

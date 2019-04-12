@@ -28,7 +28,6 @@ dependencies:
     - field.field.node.pledge.field_pledge_twitter
     - field.field.node.pledge.field_pledge_updates
     - field.field.node.pledge.field_pledge_website
-    - field.field.node.pledge.field_test
     - node.type.pledge
   module:
     - datetime
@@ -207,8 +206,8 @@ content:
     weight: 129
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -216,8 +215,8 @@ content:
     weight: 116
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: date_only
     third_party_settings: {  }
     type: datetime_default
     region: content
@@ -256,13 +255,6 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_test:
-    weight: 131
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   links:
     weight: 100

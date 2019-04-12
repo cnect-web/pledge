@@ -5,5 +5,4 @@ dependencies: {  }
 name: Organizations
 vid: pledge_organizations
 description: ''
-hierarchy: 0
 weight: 0
