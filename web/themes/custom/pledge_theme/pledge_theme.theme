@@ -30,6 +30,27 @@ function pledge_theme_page_attachments_alter(array &$page) {
  */
 function pledge_theme_preprocess_page(array &$variables) {
 
+  if ($variables['is_front']) {
+    $query = \Drupal::database()->select('node__field_pledge_countries', 'c');
+    $query->addField('nu', 'field_pledge_nuts_id_value');
+    $query->join('taxonomy_term_data', 't', 't.tid = c.field_pledge_countries_target_id');
+    $query->join('taxonomy_term__field_pledge_nuts_id', 'nu', 'nu.entity_id = t.tid');
+    $query->join('node_field_data', 'n', 'c.entity_id = n.nid');
+    $query->condition('n.status', 1);
+    $country_codes = $query->execute();
+
+    if ($country_codes) {
+      $codes = [];
+      $sum = 0;
+      foreach ($country_codes as $country_code) {
+        $codes[$country_code->field_pledge_nuts_id_value]['value'] = isset($codes[$country_code->field_pledge_nuts_id_value]['value']) ? $codes[$country_code->field_pledge_nuts_id_value]['value'] + 1 : 1;
+
+        $sum += 1;
+      }
+
+      $variables['#attached']['drupalSettings']['pledge']['pledge_countries'] = $codes;
+    }
+  }
 }
 
 /**
@@ -80,8 +101,25 @@ function pledge_theme_theme_suggestions_fieldset_alter(array &$suggestions, arra
  * Implements hook_preprocess_node().
  */
 function pledge_theme_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+  $node = $variables['node'];
+  if ($node->getType() == 'pledge') {
+    if (!empty($node->field_pledge_updates[0]->entity->field_pledge_status[0])) {
+      $pledge_status = $node->field_pledge_updates[0]->entity->field_pledge_status[0]->entity;
+      $variables['#attached']['drupalSettings']['pledge']['pledge_percent'] = $pledge_status->field_pledge_percentage->value;
+      $variables['#attached']['drupalSettings']['pledge']['pledge_status'] = $pledge_status->getName();
+      $variables['#attached']['drupalSettings']['pledge']['pledge_color'] = $pledge_status->field_pledge_color->value;
+    }
+
+    $countries = [];
+    foreach ($node->field_pledge_countries as $country) {
+      if (!empty($country->entity->field_pledge_nuts_id->value)) {
+        $countries[] = $country->entity->field_pledge_nuts_id->value;
+      }
+    }
+
+    $variables['#attached']['drupalSettings']['pledge']['pledge_countries'] = $countries;
+    $variables['#attached']['library'][] = 'pledge_theme/pledge_page';
+  }
 }
 
 /**

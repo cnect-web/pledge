@@ -1,0 +1,19 @@
+uuid: 5ccd84cc-210a-408f-97e4-4abbbc6d53ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pledge_color
+    - taxonomy.vocabulary.pledge_statuses
+id: taxonomy_term.pledge_statuses.field_pledge_color
+field_name: field_pledge_color
+entity_type: taxonomy_term
+bundle: pledge_statuses
+label: Color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

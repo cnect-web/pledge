@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.pledge_statuses.field_pledge_color
     - field.field.taxonomy_term.pledge_statuses.field_pledge_percentage
     - taxonomy.vocabulary.pledge_statuses
   module:
@@ -21,6 +22,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_pledge_color:
+    weight: 32
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   field_pledge_percentage:
     weight: 31
     settings:

@@ -1,0 +1,22 @@
+uuid: 63887c3b-f468-4811-9bb1-8721750bf187
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pledge
+label: Pledge
+type: 'canonical_entities:node'
+pattern: 'pledge/[node:title]'
+selection_criteria:
+  322551e7-ea5f-4ccf-879a-413df73a93f3:
+    id: node_type
+    bundles:
+      pledge: pledge
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 322551e7-ea5f-4ccf-879a-413df73a93f3
+selection_logic: and
+weight: -5
+relationships: {  }

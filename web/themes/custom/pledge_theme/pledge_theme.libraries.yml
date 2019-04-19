@@ -10,11 +10,19 @@ global-styling:
   js:
     bootstrap/js/bootstrap.min.js: {}
     js/general.js: {}
+    //europa.eu/webtools/load.js: { type: external }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings
 
 pledge_page:
   version: 1.x
+  css:
+    theme:
+      lightbox/css/lightbox.css: {}
   js:
+    lightbox/js/lightbox.js: {}
     js/raphael.2.1.0.min.js: {}
     js/justgauge.custom.js: {}
-    shadowbox/shadowbox.js: {}
     js/pledge.js: {}

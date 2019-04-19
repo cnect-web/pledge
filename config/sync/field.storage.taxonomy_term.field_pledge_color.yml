@@ -1,11 +1,11 @@
-uuid: a5e185e5-9d82-4819-b43e-7fab64a60b6b
+uuid: 61f9d9cc-5158-4b41-b9c8-859453df2767
 langcode: en
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_pledge_nuts_id
-field_name: field_pledge_nuts_id
+id: taxonomy_term.field_pledge_color
+field_name: field_pledge_color
 entity_type: taxonomy_term
 type: string
 settings:

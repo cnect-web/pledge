@@ -22,7 +22,7 @@ source:
   # create an index in the migration table and too many columns 
   # may throw an index size error.
   keys:
-    - name
+    - id_status
   # Here we identify the columns of interest in the source file. 
   # Each numeric key is the 0-based index of the column. 
   # For each column, the key below is the field name assigned to 
@@ -31,15 +31,20 @@ source:
   # migration UI.
   column_names:
     0:
-      name: 'Name'
+      id_status: 'ID'
     1:
+      name: 'Name'
+    2:
       percent: 'Percent'
+    3:
+      color: 'Color'
 process:
   vid:
     plugin: default_value
     default_value: pledge_statuses
   name: name
   field_pledge_percentage: percent
+  field_pledge_color: color
 
 destination:
   plugin: entity:taxonomy_term

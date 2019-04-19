@@ -51,11 +51,12 @@ content:
     type: link_default
     region: content
   field_pledge_nuts_id:
-    weight: 31
+    weight: 37
     settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: number
+    type: string_textfield
     region: content
   field_pledge_order:
     weight: 36

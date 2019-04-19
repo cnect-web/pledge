@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - pledge_import
-_core:
-  default_config_hash: KzLNr2tjqZMGLza7JUPSwwx-nMkSNsd39dBbJwmVQcg
 id: pledge_statuses
 class: null
 field_plugin_method: null
@@ -21,18 +19,23 @@ source:
   enclosure: '"'
   header_row_count: 1
   keys:
-    - name
+    - id_status
   column_names:
+    -
+      id_status: ID
     -
       name: Name
     -
       percent: Percent
+    -
+      color: Color
 process:
   vid:
     plugin: default_value
     default_value: pledge_statuses
   name: name
   field_pledge_percentage: percent
+  field_pledge_color: color
 destination:
   plugin: 'entity:taxonomy_term'
 migration_dependencies: null

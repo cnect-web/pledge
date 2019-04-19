@@ -56,13 +56,12 @@ content:
     type: link
     region: content
   field_pledge_nuts_id:
-    weight: 1
+    weight: 7
     label: above
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: number_integer
+    type: string
     region: content
   field_pledge_order:
     weight: 6

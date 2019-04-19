@@ -3,13 +3,13 @@
         <div class="pl-description-desc1 col-md-9">
             <div class="pg-logo pg-logo-noborder">
                 <span class="helper"></span>
-                {% if content.field_pledge_multi_logos.value %}
-                    <a href="http://pledgeviewer.eu/assets/img/logos/collage-digital-all-exp.png" rel="shadowbox">
-                        <img class="pg-logo-img2" src="http://pledgeviewer.eu/assets/img/logos/collage-digital-all-exp.png" alt="All Digital">
+                {% if node.field_pledge_multi_logos.value %}
+                    <a href="{{  file_url(node.field_pledge_logo.entity.field_media_image.entity.uri.value) }}" data-lightbox="logo">
+                        {{ drupal_image(node.field_pledge_logo.entity.field_media_image.target_id) }}
                     </a>
                     <div class="multilogo-info"><i class="fa fa-search-plus" aria-hidden="true"></i> {{ "Click on<br>the image for details"|t }}</div>
                 {% else %}
-                    <img class="pg-logo-img2" src="http://pledgeviewer.eu/assets/img/logos/acube.jpg" alt="Academy Cube">
+                    {{ drupal_image(node.field_pledge_logo.entity.field_media_image.target_id) }}
                 {% endif %}
             </div>
             <div class="pg-org">{{ content.title|field_value }}</div>
@@ -98,17 +98,28 @@
 
                         <div class="col-sm-6" id="pl-geo-scope">
                             <h3>{{ "Pledge's geographical scope"|t }}</h3>
-                            <div id="map" class="mapboxgl-map"><div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="360" height="240" style="position: absolute; width: 360px; height: 240px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl"><a class="mapboxgl-ctrl-logo" target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib compact"><a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/map-feedback/#/10.07/50.65/3" target="_blank">Improve this map</a></div></div></div></div>
+                            <div id="map" class="mapboxgl-map">
+                                <script type="application/json">
+                                    {
+                                        "service" : "map",
+                                        "version" : "2.0",
+                                        "custom": "/themes/custom/pledge_theme/js/map.js"
+                                    }
+                                </script>
+                            </div>
+                            <br /><br /><br />
                         </div>
 
                         <div class="col-sm-6" id="pl-time-period">
                             <h3 class="">{{ "Time period"|t }}</h3>
                             <div class="pl-start-date pl-date">
                                 <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
-                                <span>{{ "Start date"|t }}:</span> {{ content.field_pledge_roadmap_start_date|field_value }}                            </div>
+                                <span>{{ "Start date"|t }}:</span> {{ content.field_pledge_roadmap_start_date|field_value }}
+                            </div>
                             <div class="pl-stop-date pl-date">
                                 <i class="fa fa-calendar fa-2x" aria-hidden="true"></i>
-                                <span>{{ "End date"|t }}:</span> {{ content.field_pledge_roadmap_end_date|field_value }}                            </div>
+                                <span>{{ "End date"|t }}:</span> {{ content.field_pledge_roadmap_end_date|field_value }}
+                            </div>
                         </div>
 
 
@@ -228,8 +239,8 @@
                                     {% for item in node.field_pledge_milestones %}
                                     <tr>
                                         <td>{{ item.entity.field_pledge_milestone_name.value }}</td>
-                                        <td>{{ item.entity.field_pledge_completion_date.value }}</td>
-                                        <td>{{ item.entity.field_pledge_milestone_status.entity.getLabel() }}</td>
+                                        <td>{{ item.entity.field_pledge_completion_date.value|date("m/d/Y") }}</td>
+                                        <td>{{ item.entity.field_pledge_milestone_status.entity.getName() }}</td>
                                     </tr>
                                     {% endfor %}
                                     </tbody>
