@@ -3,6 +3,7 @@
 namespace Drupal\pledge_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -38,6 +39,11 @@ class FrontPageController extends ControllerBase {
     $output .= '</div>';
     $output .= '</div>';
 
+    $output .= '<div class="row" id="home-blocks">';
+    $output .= $this->getCallToAction();
+    $output .= '</div>';
+
+
     $output .= '<div class="row" id="home-updates">';
     $output .= '<div class="col-sm-6 last-updates">';
     $output .= $this->getLatestItems();
@@ -61,33 +67,41 @@ class FrontPageController extends ControllerBase {
         'title' => $this->t('Digital skills for ICT professionals'),
         'description' => $this->t('Developing high level digital skills for ICT professionals in all industry sectors.'),
         'class' => 'bl-bl1',
-        'parameter' => 'flag_ict_professional',
+        'icon' => 'laptop',
+        'parameter' => 'field_pledge_ds_ict_professional_value',
       ],
       [
         'title' => $this->t('Digital skills in education'),
         'description' => $this->t('Transforming teaching and learning of digital skills in a lifelong learning perspective, including the training of teachers'),
         'class' => 'bl-bl2',
-        'parameter' => 'flag_digital_skill_edu',
+        'icon' => 'graduation-cap',
+        'parameter' => 'field_pledge_ds_in_education_value',
       ],
       [
         'title' => $this->t('Digital skills for labour force'),
         'description' => $this->t('Developing digital skills for the digital economy, e.g. upskilling and reskilling workers, jobseekers; actions on career advice and guidance.'),
         'class' => 'bl-bl3',
-        'parameter' => 'flag_digital_skill_for_labour',
+        'icon' => 'male',
+        'parameter' => 'field_pledge_ds_for_labour_value',
       ],
       [
         'title' => $this->t('Digital skills for all citizens'),
         'description' => $this->t('Developing digital skills to enable all citizens to be active in our digital society.'),
         'class' => 'bl-bl4',
-        'parameter' => 'flag_digital_skill_for_all',
+        'icon' => 'building',
+        'parameter' => 'field_pledge_ds_for_all_citizens_value',
       ],
     ];
 
     $output = '<div class="row" id="home-blocks">';
     foreach ($items as $item) {
-      $output = "<div class=\"col-sm-6 col-md-3\">
+      $url = Url::fromRoute('view.pledges.page', [
+        $item['parameter'] => 1
+      ])->toString();
+      $output .= "<div class=\"col-sm-6 col-md-3\">
                 <div class=\"bl-bl {$item['class']}\">
-                    <h3><a href=\"/pledges/?category={$item['parameter']}\">{$item['title']}</a></h3>
+                    <i class=\"fa fa-{$item['icon']} fa-3x\" aria-hidden=\"true\"></i>
+                    <h3><a href=\"$url\">{$item['title']}</a></h3>
                     <p>{$item['description']}</p>
                 </div>
             </div>";
@@ -99,8 +113,7 @@ class FrontPageController extends ControllerBase {
 
   protected function getMainContent() {
     // TODO: Move to config / block
-    return '<div class="col-xs-12 col-sm-9">
-            <h2>Welcome to the Pledge Viewer</h2>
+    return '<h2>Welcome to the Pledge Viewer</h2>
             <div class="h2-border"></div>
             
             <p>This website collects information about the progress of the pledges 
@@ -120,8 +133,7 @@ class FrontPageController extends ControllerBase {
             
             <p>For more information see the <a href="/about">
       about page</a>. For additional information, please use the
-                    <a href="/contact">contact page</a>.</p>
-        </div>';
+                    <a href="/contact">contact page</a>.</p>';
   }
 
   protected function getSearchForm() {

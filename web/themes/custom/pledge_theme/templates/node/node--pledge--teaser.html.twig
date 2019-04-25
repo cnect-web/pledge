@@ -1,0 +1,42 @@
+<div class="pledge-item row">
+    <div class="pg-container col-sm-8">
+        <div class="pg-logo">
+            <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+                <span class="helper"></span>{{ drupal_image(node.field_pledge_logo.entity.field_media_image.target_id, null, {class: "pg-logo-img", alt: node.label}) }}
+            </a>
+        </div>
+        <div class="pg-content">
+            <h3>
+                <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.label }}</a>
+            </h3>
+            <div class="pg-desc">
+                {{ content.field_pledge_short_description|field_value }}
+            </div>
+        </div>
+    </div>
+    <div class="pg-graph col-sm-3 col-sm-offset-1 hidden-xs">
+        {% if node.field_pledge_ds_ict_professional.value %}
+            <div class="cat-icon cat-icon-ict" title="{{ "Digital skills for ICT professionals"|t }}">
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+            </div>
+        {%  endif %}
+
+        {% if node.field_pledge_ds_for_labour.value %}
+            <div class="cat-icon cat-icon-labour" title="{{ "Digital skills for labour force"|t }}">
+                <i class="fa fa-male" aria-hidden="true"></i>
+            </div>
+        {% endif %}
+
+        {% if node.field_pledge_ds_for_all_citizens.value %}
+            <div class="cat-icon cat-icon-citizens" title="{{ "Digital skills for all citizens"|t }}">
+                <i class="fa fa-building" aria-hidden="true"></i>
+            </div>
+        {% endif %}
+
+        {% if node.field_pledge_ds_in_education.value %}
+            <div class="cat-icon cat-icon-edu" title="{{ "Digital skills in education"|t }}">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+        {% endif %}
+    </div>
+</div>

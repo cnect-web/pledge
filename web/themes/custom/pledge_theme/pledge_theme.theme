@@ -172,3 +172,59 @@ function pledge_theme_theme_suggestions_details_alter(array &$suggestions, array
 function pledge_theme_preprocess_menu_local_task(array &$variables) {
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function pledge_theme_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $view = $form_state->getStorage('view');
+  if ($view['view']->id() == 'pledges') {
+    $input = $form_state->getUserInput();
+    if (
+        !empty($input['combine']) ||
+        $input['field_pledge_countries_target_id'] != 'All' ||
+        $input['field_pledge_ds_for_all_citizens_value'] != 'All' ||
+        $input['field_pledge_ds_ict_professional_value'] != 'All' ||
+        $input['field_pledge_ds_for_labour_value'] != 'All' ||
+        $input['field_pledge_ds_in_education_value'] != 'All'
+    ) {
+      $class = 'up';
+    }
+    else {
+      $class = 'down';
+      $form['#attributes']['class'][] = 'sr-only';
+    }
+
+    //  exit('pledge_theme_form_views_exposed_form_pledges_page_alter');
+    // Alter the submit button to something more friendly.
+    $form['#prefix'] = '<div class="row intro-list-pledges">
+        <div class="col-lg-9">
+            Here you can check the progress of the pledges in the context of 
+            the <a target="_blank" href="https://ec.europa.eu/digital-single-market/en/digital-skills-jobs-coalition">Digital Skills and Jobs Coalition</a>
+            as reported by the pledges themselves. 
+            For more information, see the <a href="/about">about</a> page. 
+            For additional information, please use the <a href="/contact">contact page</a>.
+        </div>
+        </div>
+        <div class="filters row"><div class="col-lg-9"><h3 class="trigger-filters">Filters <i class="fa fa-caret-' . $class . '" aria-hidden="true"></i></h3>';
+    $form['#suffix'] = '</div></div>';
+
+  }
+//  $fields = [
+//    'combine',
+////    'field_pledge_countries_target_id',
+//    'field_pledge_ds_for_all_citizens_value',
+//    'field_pledge_ds_ict_professional_value',
+//    'field_pledge_ds_for_labour_value',
+//    'field_pledge_ds_in_education_value',
+//    'actions',
+//  ];
+//
+//  foreach ($fields as $field) {
+//    $form['subform'][$field] = $form[$field];
+//    unset($form[$field]);
+//  }
+
+}

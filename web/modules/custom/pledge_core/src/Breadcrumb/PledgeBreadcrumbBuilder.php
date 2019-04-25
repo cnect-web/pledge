@@ -14,7 +14,10 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
   public function applies(RouteMatchInterface $attributes) {
 
     $parameters = $attributes->getParameters()->all();
-    if (isset($parameters['node']) && !empty($parameters['node'])) {
+    if (
+      !empty($parameters['view_id']) && $parameters['view_id'] == 'pledges' ||
+      !empty($parameters['node']) && !empty($parameters['node'])
+    ) {
       return TRUE;
     }
 
@@ -27,21 +30,21 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
   public function build(RouteMatchInterface $route_match) {
     $breadcrumb = new Breadcrumb();
 
-//    var_dump($route_match->getRawParameters());
-//    var_dump($route_match->getRouteObject());
-//    exit();
-
     // Add a link to the homepage as our first crumb.
     $breadcrumb->addLink(Link::createFromRoute('Home', '<front>'));
 
     // Get the node for the current page
     $node = $route_match->getParameter('node');
 
-    if ($node->bundle() == 'pledge') {
+    if (!empty($node) && $node->bundle() == 'pledge') {
       $breadcrumb->addLink(Link::createFromRoute('Pledges', 'view.pledges.page'));
+      $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
     }
 
-    $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
+    $view = $route_match->getParameter('view_id');
+    if (!empty($view) && $view == 'pledges') {
+      $breadcrumb->addLink(Link::createFromRoute('Pledges', '<nolink>'));
+    }
 
     // Don't forget to add cache control by a route.
     // Otherwise all pages will have the same breadcrumb.

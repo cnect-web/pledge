@@ -1,6 +1,10 @@
 (function ($, Drupal) {
     Drupal.behaviors.pledgeGeneral = {
         attach: function (context, settings) {
+            $('h3.trigger-filters', context).on('click', function(){
+                $('#views-exposed-form-pledges-page').toggleClass('sr-only');
+            });
+
             var cookie = false;
             var cookieContent = $('.cookie-disclaimer');
 

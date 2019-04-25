@@ -31,7 +31,10 @@ process:
   field_pledge_twitter: twitter
   field_pledge_logo: logo_filename
   field_pledge_short_description: short_desc
-  field_pledge_description: description
+  field_pledge_description/value: description
+  field_pledge_description/format:
+      plugin: default_value
+      default_value: "full_html"
   field_pledge_ds_for_all_citizens: flag_digital_skill_for_all
   field_pledge_ds_for_labour: flag_digital_skill_for_labour
   field_pledge_ds_ict_professional: flag_ict_professional

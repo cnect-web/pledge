@@ -23,19 +23,8 @@
 {% endif %}
 <div class="container">
     <div class="page">
-        {% if not is_front and (page.title or node.label) %}
-        <h1>
-            {% if page.title %}
-                {{ page.title }}
-            {% elseif node.label %}
-                {{ node.label }}
-            {% endif %}
-        </h1>
-        <div class="h1-border"></div>
-        {% endif %}
-
         {% if not is_front %}
-        {{ page.breadcrumbs }}
+            {{ page.breadcrumbs }}
         {% endif %}
 
         {{ page.content }}

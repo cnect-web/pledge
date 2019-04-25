@@ -11,6 +11,14 @@ body{
     color: #444;
 }
 
+img {
+    border: 0;
+}
+
+details {
+    border: none;
+}
+
 nav.navbar.navbar-default {
     background: #1E2647;
     color: #EEE;
@@ -139,8 +147,7 @@ h1 {
 }
 
 #map_canvas {
-    margin-top: 50px;
-    height: 560px; 
+    height: 560px;
     width: 100%; 
     border: 1px solid #ccc;
     border-left: 0;
@@ -735,4 +742,15 @@ img.eucomm {
     width: 148px;
     height: 103px;
     display: block;
+}
+
+#views-exposed-form-pledges-page summary{
+    font-size: 1.4em;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #536677;
+}
+
+.navbar {
+    margin-bottom: 0px;
 }
