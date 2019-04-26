@@ -57,7 +57,8 @@ class FrontPageController extends ControllerBase {
 
     return [
       '#theme' => 'markup',
-      '#markup' => $output
+      '#markup' => $output,
+      '#allowed_tags' => ['form', 'div', 'input', 'button', 'h1', 'h2', 'h3', 'p', 'i', 'a'],
     ];
   }
 
@@ -137,7 +138,28 @@ class FrontPageController extends ControllerBase {
   }
 
   protected function getSearchForm() {
-    return '';
+    // TODO: replace with form class and block with template.
+    return '
+        <div class="num-row">
+            <div class="num-num">103</div>
+            <div class="num-text">pledges</div>
+        </div>
+
+        <div class="num-row">
+            <div class="num-num">400</div>
+            <div class="num-text num-text-top">members</div>
+            <div class="num-desc">Find the <a target="_blank" href="https://ec.europa.eu/digital-single-market/en/become-member-digital-skills-and-jobs-coalition">full list of Members</a></div>
+        </div>
+
+        <!-- Preview search form -->
+        <form class="navbar-form2" role="search" method="get" action="/pledges/">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search pledges" name="combine" />
+              <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+        </form>';
   }
 
   protected function getTwitterBlock() {
