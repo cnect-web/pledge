@@ -1,6 +1,6 @@
 uuid: bfd026ed-140e-47ba-aa68-bd4156966c49
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.latest_update
@@ -10,8 +10,8 @@ dependencies:
     - pledge_theme
 id: views_block__latest_update_block
 theme: pledge_theme
-region: latest
-weight: 0
+region: content
+weight: 2
 provider: null
 plugin: 'views_block:latest_update-block'
 settings:

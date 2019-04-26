@@ -23,9 +23,11 @@ dependencies:
     - field.field.node.pledge.field_pledge_old_id
     - field.field.node.pledge.field_pledge_organizations
     - field.field.node.pledge.field_pledge_qualitative_impact
+    - field.field.node.pledge.field_pledge_roadmap_end_date
     - field.field.node.pledge.field_pledge_roadmap_start_date
     - field.field.node.pledge.field_pledge_short_description
     - field.field.node.pledge.field_pledge_twitter
+    - field.field.node.pledge.field_pledge_updates
     - field.field.node.pledge.field_pledge_website
     - node.type.pledge
   module:
@@ -35,25 +37,76 @@ targetEntityType: node
 bundle: pledge
 mode: teaser
 content:
-  links:
-    weight: 100
+  field_pledge_ds_for_all_citizens:
+    type: boolean
+    weight: 6
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_pledge_ds_for_labour:
+    type: boolean
+    weight: 5
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_pledge_ds_ict_professional:
+    type: boolean
+    weight: 4
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_pledge_ds_in_education:
+    type: boolean
+    weight: 3
+    region: content
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_pledge_logo:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_pledge_short_description:
+    type: basic_string
+    weight: 2
+    region: content
+    label: above
     settings: {  }
     third_party_settings: {  }
+  links:
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_pledge_contact_email: true
   field_pledge_contact_name: true
   field_pledge_contact_telephone: true
   field_pledge_countries: true
   field_pledge_description: true
-  field_pledge_ds_for_all_citizens: true
-  field_pledge_ds_for_labour: true
-  field_pledge_ds_ict_professional: true
-  field_pledge_ds_in_education: true
   field_pledge_funding: true
   field_pledge_funding_add_text: true
   field_pledge_impacts: true
-  field_pledge_logo: true
   field_pledge_milestones: true
   field_pledge_multi_logos: true
   field_pledge_national_scope: true
@@ -62,7 +115,6 @@ hidden:
   field_pledge_qualitative_impact: true
   field_pledge_roadmap_end_date: true
   field_pledge_roadmap_start_date: true
-  field_pledge_short_description: true
   field_pledge_twitter: true
   field_pledge_updates: true
   field_pledge_website: true

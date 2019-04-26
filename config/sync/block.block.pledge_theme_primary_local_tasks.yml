@@ -8,8 +8,8 @@ _core:
   default_config_hash: CyX_aDKAka2_eihevNLscCHDYrzDgIqwWzFVEFRKIww
 id: pledge_theme_primary_local_tasks
 theme: pledge_theme
-region: header
-weight: -5
+region: content
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

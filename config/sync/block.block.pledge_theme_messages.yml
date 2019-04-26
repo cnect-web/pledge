@@ -11,7 +11,7 @@ _core:
 id: pledge_theme_messages
 theme: pledge_theme
 region: content
-weight: -1
+weight: 0
 provider: null
 plugin: system_messages_block
 settings:

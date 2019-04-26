@@ -1,6 +1,6 @@
 uuid: 93329d06-7723-454a-b9e1-d098e8d6c62c
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - twitter_block
@@ -8,8 +8,8 @@ dependencies:
     - pledge_theme
 id: twitterblock
 theme: pledge_theme
-region: twitter
-weight: 0
+region: content
+weight: 3
 provider: null
 plugin: twitter_block
 settings:
