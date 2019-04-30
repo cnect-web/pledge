@@ -1,0 +1,23 @@
+uuid: 5e0d802e-03da-47a8-8564-b39a5fc143a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_website
+    - node.type.members
+  module:
+    - link
+id: node.members.field_pledge_website
+field_name: field_pledge_website
+entity_type: node
+bundle: members
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

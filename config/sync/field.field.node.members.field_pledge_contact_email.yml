@@ -1,0 +1,19 @@
+uuid: 93cbbdd4-8a8f-4861-b30f-382e0c3b6dc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_contact_email
+    - node.type.members
+id: node.members.field_pledge_contact_email
+field_name: field_pledge_contact_email
+entity_type: node
+bundle: members
+label: 'Contact email'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

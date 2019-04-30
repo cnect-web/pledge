@@ -1,44 +1,33 @@
-uuid: 00ac7f43-ac9f-4e86-b175-4598174bea34
+uuid: 0f00a9e1-9c02-4b35-b698-3640073479bd
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.progress
     - field.field.paragraph.pledge_impact.field_pledge_indicator_desc
     - field.field.paragraph.pledge_impact.field_pledge_indicator_name
     - field.field.paragraph.pledge_impact.field_pledge_indicator_status
     - field.field.paragraph.pledge_impact.field_pledge_indicator_target
     - field.field.paragraph.pledge_impact.field_pledge_last_update
     - paragraphs.paragraphs_type.pledge_impact
-id: paragraph.pledge_impact.default
+  module:
+    - readonly_field_widget
+id: paragraph.pledge_impact.progress
 targetEntityType: paragraph
 bundle: pledge_impact
-mode: default
+mode: progress
 content:
-  field_pledge_indicator_desc:
-    type: string_textarea
-    weight: 1
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
   field_pledge_indicator_name:
     weight: 0
     settings:
-      size: 60
-      placeholder: ''
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
     third_party_settings: {  }
-    type: string_textfield
+    type: readonly_field_widget
     region: content
   field_pledge_indicator_status:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_pledge_indicator_target:
     weight: 2
     settings:
       size: 60
@@ -46,8 +35,19 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_pledge_indicator_target:
+    weight: 1
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
+    type: readonly_field_widget
+    region: content
 hidden:
   created: true
+  field_pledge_indicator_desc: true
   field_pledge_last_update: true
   status: true
   uid: true

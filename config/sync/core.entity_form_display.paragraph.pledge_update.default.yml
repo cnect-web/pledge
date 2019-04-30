@@ -7,36 +7,26 @@ dependencies:
     - field.field.paragraph.pledge_update.field_pledge_last_update
     - field.field.paragraph.pledge_update.field_pledge_status
     - paragraphs.paragraphs_type.pledge_update
-  module:
-    - datetime
 id: paragraph.pledge_update.default
 targetEntityType: paragraph
 bundle: pledge_update
 mode: default
 content:
   field_pledge_evidence:
-    weight: 2
+    weight: 0
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
-  field_pledge_last_update:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
   field_pledge_status:
     weight: 1
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: options_select
     region: content
 hidden:
   created: true
+  field_pledge_last_update: true
   status: true

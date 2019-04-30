@@ -1,0 +1,134 @@
+uuid: a37af8d3-8136-475d-82b9-a3e9825230e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.progress
+    - field.field.node.pledge.field_pledge_contact_email
+    - field.field.node.pledge.field_pledge_contact_name
+    - field.field.node.pledge.field_pledge_contact_telephone
+    - field.field.node.pledge.field_pledge_countries
+    - field.field.node.pledge.field_pledge_description
+    - field.field.node.pledge.field_pledge_ds_for_all_citizens
+    - field.field.node.pledge.field_pledge_ds_for_labour
+    - field.field.node.pledge.field_pledge_ds_ict_professional
+    - field.field.node.pledge.field_pledge_ds_in_education
+    - field.field.node.pledge.field_pledge_funding
+    - field.field.node.pledge.field_pledge_funding_add_text
+    - field.field.node.pledge.field_pledge_impacts
+    - field.field.node.pledge.field_pledge_logo
+    - field.field.node.pledge.field_pledge_milestones
+    - field.field.node.pledge.field_pledge_multi_logos
+    - field.field.node.pledge.field_pledge_national_scope
+    - field.field.node.pledge.field_pledge_old_id
+    - field.field.node.pledge.field_pledge_organizations
+    - field.field.node.pledge.field_pledge_qualitative_impact
+    - field.field.node.pledge.field_pledge_roadmap_end_date
+    - field.field.node.pledge.field_pledge_roadmap_start_date
+    - field.field.node.pledge.field_pledge_short_description
+    - field.field.node.pledge.field_pledge_twitter
+    - field.field.node.pledge.field_pledge_updates
+    - field.field.node.pledge.field_pledge_website
+    - node.type.pledge
+  module:
+    - paragraphs
+id: node.pledge.progress
+targetEntityType: node
+bundle: pledge
+mode: progress
+content:
+  field_pledge_impacts:
+    type: paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: progress
+      default_paragraph_type: pledge_impact
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_pledge_milestones:
+    type: paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: progress
+      default_paragraph_type: pledge_milestone
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_pledge_updates:
+    type: paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: progress
+      default_paragraph_type: pledge_update
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 7
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_pledge_contact_email: true
+  field_pledge_contact_name: true
+  field_pledge_contact_telephone: true
+  field_pledge_countries: true
+  field_pledge_description: true
+  field_pledge_ds_for_all_citizens: true
+  field_pledge_ds_for_labour: true
+  field_pledge_ds_ict_professional: true
+  field_pledge_ds_in_education: true
+  field_pledge_funding: true
+  field_pledge_funding_add_text: true
+  field_pledge_logo: true
+  field_pledge_multi_logos: true
+  field_pledge_national_scope: true
+  field_pledge_old_id: true
+  field_pledge_organizations: true
+  field_pledge_qualitative_impact: true
+  field_pledge_roadmap_end_date: true
+  field_pledge_roadmap_start_date: true
+  field_pledge_short_description: true
+  field_pledge_twitter: true
+  field_pledge_website: true
+  path: true
+  promote: true
+  revision_log: true
+  status: true
+  sticky: true
+  title: true
+  uid: true
+  url_redirects: true

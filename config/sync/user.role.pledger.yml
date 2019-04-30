@@ -1,0 +1,15 @@
+uuid: faad068e-8eb7-4518-a76c-5bc39d6c04ad
+langcode: en
+status: true
+dependencies: {  }
+id: pledger
+label: Pledger
+weight: 2
+is_admin: null
+permissions:
+  - 'create paragraph content pledge_update'
+  - 'edit own pledge content'
+  - 'update paragraph content pledge_impact'
+  - 'update paragraph content pledge_milestone'
+  - 'update paragraph content pledge_update'
+  - 'view paragraph content pledge_milestone'

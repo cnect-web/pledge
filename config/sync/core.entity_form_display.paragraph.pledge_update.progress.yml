@@ -1,41 +1,36 @@
-uuid: 73a0f0ed-a867-4f1a-9fcd-226cdf9f9e07
+uuid: 912fda57-6f15-4ed2-8234-965638c75abd
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.progress
     - field.field.paragraph.pledge_update.field_pledge_evidence
     - field.field.paragraph.pledge_update.field_pledge_last_update
     - field.field.paragraph.pledge_update.field_pledge_status
     - paragraphs.paragraphs_type.pledge_update
-  module:
-    - datetime
-id: paragraph.pledge_update.default
+id: paragraph.pledge_update.progress
 targetEntityType: paragraph
 bundle: pledge_update
-mode: default
+mode: progress
 content:
   field_pledge_evidence:
-    weight: 1
-    label: inline
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_pledge_last_update:
-    type: datetime_default
-    weight: 2
-    region: content
-    label: inline
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-  field_pledge_status:
     weight: 0
-    label: inline
     settings:
-      link: false
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: string_textarea
     region: content
-hidden: {  }
+  field_pledge_status:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  field_pledge_last_update: true
+  status: true

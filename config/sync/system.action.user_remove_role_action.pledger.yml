@@ -1,0 +1,14 @@
+uuid: 15cf745d-e4a3-4d51-8f24-16cf5b36a13a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.pledger
+  module:
+    - user
+id: user_remove_role_action.pledger
+label: 'Remove the Pledger role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: pledger

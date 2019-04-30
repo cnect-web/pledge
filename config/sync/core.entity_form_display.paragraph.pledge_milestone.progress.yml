@@ -1,46 +1,41 @@
-uuid: df2fba4a-4956-4810-82aa-885ba9273824
+uuid: 296d6d16-fdba-4197-9574-775284ea5dce
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_form_mode.paragraph.progress
     - field.field.paragraph.pledge_milestone.field_pledge_completion_date
     - field.field.paragraph.pledge_milestone.field_pledge_last_update
     - field.field.paragraph.pledge_milestone.field_pledge_milestone_name
     - field.field.paragraph.pledge_milestone.field_pledge_milestone_status
     - paragraphs.paragraphs_type.pledge_milestone
   module:
-    - single_datetime
-id: paragraph.pledge_milestone.default
+    - readonly_field_widget
+id: paragraph.pledge_milestone.progress
 targetEntityType: paragraph
 bundle: pledge_milestone
-mode: default
+mode: progress
 content:
   field_pledge_completion_date:
+    type: readonly_field_widget
     weight: 1
-    settings:
-      hour_format: 24h
-      allow_times: '15'
-      allowed_hours: ''
-      disable_days: {  }
-      exclude_date: ''
-      inline: false
-      mask: false
-      datetimepicker_theme: default
-      min_date: ''
-      max_date: ''
-      year_start: ''
-      year_end: ''
-    third_party_settings: {  }
-    type: single_date_time_widget
     region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
   field_pledge_milestone_name:
+    type: readonly_field_widget
     weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
+    settings:
+      label: above
+      formatter_type: null
+      formatter_settings: null
+      show_description: false
+    third_party_settings: {  }
   field_pledge_milestone_status:
     weight: 2
     settings: {  }

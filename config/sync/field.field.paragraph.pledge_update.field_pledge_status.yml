@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: pledge_update
 label: Status
 description: ''
-required: false
+required: true
 translatable: true
 default_value: {  }
 default_value_callback: ''

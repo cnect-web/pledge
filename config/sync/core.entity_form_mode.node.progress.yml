@@ -1,0 +1,10 @@
+uuid: 832e2ae8-add8-4da6-909d-d096d847bd1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.progress
+label: Progress
+targetEntityType: node
+cache: true

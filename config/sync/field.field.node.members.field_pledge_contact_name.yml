@@ -1,0 +1,19 @@
+uuid: 08b6af5a-fc3b-4ebe-8a68-099a0c2328c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_contact_name
+    - node.type.members
+id: node.members.field_pledge_contact_name
+field_name: field_pledge_contact_name
+entity_type: node
+bundle: members
+label: 'Contact name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

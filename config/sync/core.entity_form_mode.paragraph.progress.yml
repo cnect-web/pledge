@@ -1,0 +1,10 @@
+uuid: 8f7e600d-3b19-4e03-8000-0920fe1e1b31
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.progress
+label: Progress
+targetEntityType: paragraph
+cache: true

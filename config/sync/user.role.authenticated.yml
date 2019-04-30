@@ -11,3 +11,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view media'
+  - 'view paragraph content pledge_impact'
+  - 'view paragraph content pledge_milestone'
+  - 'view paragraph content pledge_update'
+  - 'view the administration theme'

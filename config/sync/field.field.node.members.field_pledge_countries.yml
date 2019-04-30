@@ -1,0 +1,29 @@
+uuid: a08f475a-9e15-41cf-8b28-c0e449e41fb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pledge_countries
+    - node.type.members
+    - taxonomy.vocabulary.pledge_countries
+id: node.members.field_pledge_countries
+field_name: field_pledge_countries
+entity_type: node
+bundle: members
+label: Countries
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      pledge_countries: pledge_countries
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
