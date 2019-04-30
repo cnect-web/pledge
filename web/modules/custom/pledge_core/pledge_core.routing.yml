@@ -6,3 +6,25 @@ pledge_core.front:
   requirements:
     _access: 'TRUE'
 
+pledge_core.progress:
+  path: 'progress/{node}'
+  defaults:
+    _controller: '\Drupal\pledge_core\Controller\ProgressController::progress'
+    _title: 'Progress update'
+  requirements:
+    _permission: 'edit own pledge content'
+  options:
+    _admin_route: TRUE
+    parameters:
+      node:
+        type: 'entity:node'
+
+
+pledge_core.pledge_admin_form:
+  path: '/admin/pledge/redirections'
+  defaults:
+    _form: '\Drupal\pledge_core\Form\AdminForm'
+    _title: 'Generate redirections'
+  requirements:
+    _permission: 'administer redirect settings'
+  

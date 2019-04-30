@@ -754,3 +754,30 @@ img.eucomm {
 .navbar {
     margin-bottom: 0px;
 }
+
+/** members page **/
+.field--label-above {
+    margin: 5px 0;
+}
+.field--name-field-pledge-website {
+    padding: 10px 0;
+}
+.field--name-field-pledge-countries .field__item {
+    padding: 5px 20px;
+}
+
+/** your pledges page **/
+.view-pledge-your-pledges table {
+    width: 100%;
+}
+.view-pledge-your-pledges td {
+    padding: 10px;
+    border: 1px solid #bfbfba;
+}
+.view-pledge-your-pledges th {
+    text-transform: uppercase;
+    color: #333;
+    border: 1px solid #bfbfba;
+    background: #f5f5f2;
+    padding: 10px;
+}

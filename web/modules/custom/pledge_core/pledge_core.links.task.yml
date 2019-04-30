@@ -1,6 +1,6 @@
-fut_group.link.group_navigation:
-  route_name: 'fut_group.manage_navigation'
-  title: 'Group navigation'
-  description: 'Group navigation'
-  base_route: 'entity.group.canonical'
-  weight: 10
+#pledge_core.link.progress:
+#  route_name: 'view.pledge_your_pledges.page'
+#  title: 'Your pledges'
+#  description: 'Your pledges'
+#  base_route: 'entity.user.canonical'
+#  weight: 10

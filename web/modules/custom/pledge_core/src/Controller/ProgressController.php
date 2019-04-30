@@ -3,13 +3,14 @@
 namespace Drupal\pledge_core\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\Url;
+use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * Front page controller.
  */
-class FrontPageController extends ControllerBase {
+class ProgressController extends ControllerBase {
 
   /**
    * ContentController constructor.
@@ -27,180 +28,14 @@ class FrontPageController extends ControllerBase {
     );
   }
 
-  public function front() {
-    $output = '<div class="page  page-home">';
-
-    $output .= '<div class="row" id="home-about">';
-    $output .= '<div class="col-xs-12 col-sm-9">';
-    $output .= $this->getMainContent();
-    $output .= '</div>';
-    $output .= '<div class="col-xs-12 col-sm-3 numbers">';
-    $output .= $this->getSearchForm();
-    $output .= '</div>';
-    $output .= '</div>';
-
-    $output .= '<div class="row" id="home-blocks">';
-    $output .= $this->getCallToAction();
-    $output .= '</div>';
-
-
-    $output .= '<div class="row" id="home-updates">';
-    $output .= '<div class="col-sm-6 last-updates">';
-    $output .= $this->getLatestItems();
-    $output .= '</div>';
-    $output .= '<div class="col-sm-offset-2 col-sm-4">';
-    $output .= $this->getTwitterBlock();
-    $output .= '</div>';
-    $output .= '</div>';
-
-    $output .= '</div>';
-
-    return [
-      '#theme' => 'markup',
-      '#markup' => $output,
-      '#allowed_tags' => ['form', 'div', 'input', 'button', 'h1', 'h2', 'h3', 'p', 'i', 'a'],
-    ];
-  }
-
-  public function getCallToAction() {
-    $items = [
-      [
-        'title' => $this->t('Digital skills for ICT professionals'),
-        'description' => $this->t('Developing high level digital skills for ICT professionals in all industry sectors.'),
-        'class' => 'bl-bl1',
-        'icon' => 'laptop',
-        'parameter' => 'field_pledge_ds_ict_professional_value',
-      ],
-      [
-        'title' => $this->t('Digital skills in education'),
-        'description' => $this->t('Transforming teaching and learning of digital skills in a lifelong learning perspective, including the training of teachers'),
-        'class' => 'bl-bl2',
-        'icon' => 'graduation-cap',
-        'parameter' => 'field_pledge_ds_in_education_value',
-      ],
-      [
-        'title' => $this->t('Digital skills for labour force'),
-        'description' => $this->t('Developing digital skills for the digital economy, e.g. upskilling and reskilling workers, jobseekers; actions on career advice and guidance.'),
-        'class' => 'bl-bl3',
-        'icon' => 'male',
-        'parameter' => 'field_pledge_ds_for_labour_value',
-      ],
-      [
-        'title' => $this->t('Digital skills for all citizens'),
-        'description' => $this->t('Developing digital skills to enable all citizens to be active in our digital society.'),
-        'class' => 'bl-bl4',
-        'icon' => 'building',
-        'parameter' => 'field_pledge_ds_for_all_citizens_value',
-      ],
-    ];
-
-    $output = '<div class="row" id="home-blocks">';
-    foreach ($items as $item) {
-      $url = Url::fromRoute('view.pledges.page', [
-        $item['parameter'] => 1
-      ])->toString();
-      $output .= "<div class=\"col-sm-6 col-md-3\">
-                <div class=\"bl-bl {$item['class']}\">
-                    <i class=\"fa fa-{$item['icon']} fa-3x\" aria-hidden=\"true\"></i>
-                    <h3><a href=\"$url\">{$item['title']}</a></h3>
-                    <p>{$item['description']}</p>
-                </div>
-            </div>";
+  public function progress($node) {
+    $user = User::load(\Drupal::currentUser()->id());
+    if (!$node->access('update', $user)) {
+      throw new AccessDeniedHttpException();
     }
-    $output .= '</div>';
 
-    return $output;
+    return $this->entityFormBuilder()->getForm($node, 'progress');
   }
 
-  protected function getMainContent() {
-    // TODO: Move to config / block
-    return '<h2>Welcome to the Pledge Viewer</h2>
-            <div class="h2-border"></div>
-            
-            <p>This website collects information about the progress of the pledges 
-                in the context of the
-    <a target="_blank" href="https://ec.europa.eu/digital-single-market/en/digital-skills-jobs-coalition">Digital Skills and Jobs Coalition</a>.</p>
-            
-            <p>The Digital Skills and Jobs Coalition brings together Member 
-                States, companies, social partners, non-profit organisations
-    and education providers who take action to tackle the lack of 
-                digital skills in Europe.</p>
-            
-            <p>Member States can support cooperation among different actors in 
-                their country by bringing them together in national Digital 
-                Skills and Jobs Coalitions. Find the list of active national 
-                coalitions with correspondent contact details
-    <a target="_blank" href="https://ec.europa.eu/digital-single-market/en/digital-skills-jobs-coalition">here</a>.</p>
-            
-            <p>For more information see the <a href="/about">
-      about page</a>. For additional information, please use the
-                    <a href="/contact">contact page</a>.</p>';
-  }
-
-  protected function getNodeCount($type) {
-    $query = \Drupal::entityQuery('node')
-      ->condition('status', 1)
-      ->condition('type', $type);
-    return $query->count()->execute();
-  }
-
-  protected function getSearchForm() {
-    $pledges_count = $this->getNodeCount('pledge');
-    $members_count = $this->getNodeCount('members');
-    // TODO: replace with form class and block with template.
-    $url = Url::fromRoute('view.pledge_members.page')->toString();
-    return '
-        <div class="num-row">
-            <div class="num-num">' . $pledges_count . '</div>
-            <div class="num-text">pledges</div>
-        </div>
-
-        <div class="num-row">
-            <div class="num-num">' . $members_count .  '</div>
-            <div class="num-text num-text-top">members</div>
-            <div class="num-desc">Find the <a target="_blank" href="' . $url . '">full list of Members</a></div>
-        </div>
-
-        <!-- Preview search form -->
-        <form class="navbar-form2" role="search" method="get" action="/pledges/">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search pledges" name="combine" />
-              <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-              </div>
-            </div>
-        </form>';
-  }
-
-  protected function getTwitterBlock() {
-    return $this->getBlock('twitter_block', [
-      'tweet_limit' => '3',
-      'username' => 'DigitalSkillsEU',
-    ]);
-  }
-
-  protected function getLatestItems() {
-    $view = \Drupal\views\Views::getView('latest_update');
-    // Set the display machine id.
-    $view->setDisplay('block');
-
-    // Render.
-    $render = $view->render();
-
-    $title = [
-      '#markup' => '<h2>' . $view->getTitle() . '</h2>',
-    ];
-
-    // render(views_embed_view('latest_update', 'block'));
-    return  render($title) . render($render);
-  }
-
-  protected function getBlock($id, $config = []) {
-    $block_manager = \Drupal::service('plugin.manager.block');
-    $plugin_block = $block_manager->createInstance($id, $config);
-    $render = $plugin_block->build();
-
-    return render($render);
-  }
 
 }

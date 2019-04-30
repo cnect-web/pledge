@@ -7,6 +7,7 @@
 
 use \Drupal\Core\Breadcrumb\Breadcrumb;
 use \Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Form\FormStateInterface;
 
 function pledge_core_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInterface $route_match, array $context) {
 //  var_dump($breadcrumb);
@@ -29,4 +30,36 @@ function pledge_core_preprocess_field(&$variables) {
 //      }
 //    }
 //  }
+}
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function pledge_core_entity_type_build(array &$entity_types) {
+
+  // We set ngf_interests form view mode. So, we can load as a separate form
+  // in the custom page.
+  $view_modes = ['progress'];
+  $node = $entity_types['node'];
+  foreach ($view_modes as $view_mode) {
+    $default_handler_class = $node->getHandlerClasses();
+    $node->setFormClass($view_mode, $default_handler_class['form']['default']);
+  }
+
+}
+
+function pledge_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+//  var_dump($form_id);
+  if ($form_id == 'node_pledge_progress_form') {
+//    foreach ($form['field_pledge_milestones']['widget'] as $id => $widget) {
+//      if (!empty($form['field_pledge_milestones']['widget'][$id]['info']['remove_button_info'])) {
+////        unset($form['field_pledge_milestones']['widget'][$id]['info']['remove_button_info']);
+//      }
+//    }
+    unset($form['field_pledge_milestones']['widget']['add_more']['icons']);
+    unset($form['field_pledge_impacts']['widget']['add_more']['icons']);
+
+  }
+
 }

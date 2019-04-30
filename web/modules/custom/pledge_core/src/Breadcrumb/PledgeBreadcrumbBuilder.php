@@ -41,6 +41,11 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
       $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
     }
 
+    if (!empty($node) && $node->bundle() == 'members') {
+      $breadcrumb->addLink(Link::createFromRoute('Members', 'view.pledge_members.page'));
+      $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
+    }
+
     $view = $route_match->getParameter('view_id');
     if (!empty($view) && $view == 'pledges') {
       $breadcrumb->addLink(Link::createFromRoute('Pledges', '<nolink>'));

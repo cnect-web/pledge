@@ -137,18 +137,28 @@ class FrontPageController extends ControllerBase {
                     <a href="/contact">contact page</a>.</p>';
   }
 
+  protected function getNodeCount($type) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('status', 1)
+      ->condition('type', $type);
+    return $query->count()->execute();
+  }
+
   protected function getSearchForm() {
+    $pledges_count = $this->getNodeCount('pledge');
+    $members_count = $this->getNodeCount('members');
     // TODO: replace with form class and block with template.
+    $url = Url::fromRoute('view.pledge_members.page')->toString();
     return '
         <div class="num-row">
-            <div class="num-num">103</div>
+            <div class="num-num">' . $pledges_count . '</div>
             <div class="num-text">pledges</div>
         </div>
 
         <div class="num-row">
-            <div class="num-num">400</div>
+            <div class="num-num">' . $members_count .  '</div>
             <div class="num-text num-text-top">members</div>
-            <div class="num-desc">Find the <a target="_blank" href="https://ec.europa.eu/digital-single-market/en/become-member-digital-skills-and-jobs-coalition">full list of Members</a></div>
+            <div class="num-desc">Find the <a target="_blank" href="' . $url . '">full list of Members</a></div>
         </div>
 
         <!-- Preview search form -->
