@@ -1,5 +1,5 @@
-id: pledge_statuses
-label: Import pledge statuses
+id: pledge_members
+label: Import pledge members
 migration_group: pledge
 dependencies:
   enforced:
@@ -9,9 +9,9 @@ dependencies:
       - pledge_import
 
 source:
-  plugin: csv
+  plugin: pledge_member_node
   # Full path to the file.
-  path: /data/statuses.csv
+  path: /data/members.csv
   # Column delimiter. Comma (,) by default.
   delimiter: ','
   # Field enclosure. Double quotation marks (") by default.
@@ -22,7 +22,7 @@ source:
   # create an index in the migration table and too many columns 
   # may throw an index size error.
   keys:
-    - id_status
+    - organisation
   # Here we identify the columns of interest in the source file. 
   # Each numeric key is the 0-based index of the column. 
   # For each column, the key below is the field name assigned to 
@@ -31,20 +31,36 @@ source:
   # migration UI.
   column_names:
     0:
-      id_status: 'ID'
+      organisation: 'Organisation'
     1:
       name: 'Name'
     2:
-      percent: 'Percent'
+      email: 'Email'
     3:
-      color: 'Color'
+      contribution: 'Contribution'
+    4:
+      website: 'Website'
+    5:
+      country: 'Country'
+    6:
+      id_country: 'Country ID'
 process:
-  vid:
+  type:
     plugin: default_value
-    default_value: pledge_statuses
-  name: name
-  field_pledge_percentage: percent
-  field_pledge_color: color
+    default_value: members
+  title: organisation
+  field_pledge_contact_name: name
+  field_pledge_contact_email: email
+  field_pledge_contribution: contribution
+  field_pledge_website: website
+  field_pledge_countries:
+    plugin: sub_process
+    source: id_country
+    process:
+      target_id:
+        plugin: migration_lookup
+        migration: pledge_country_term
+        source: value
 
 destination:
-  plugin: entity:taxonomy_term
+  plugin: entity:node

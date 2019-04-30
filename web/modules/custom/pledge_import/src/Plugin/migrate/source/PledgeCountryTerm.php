@@ -57,10 +57,4 @@ class PledgeCountryTerm extends SqlBase {
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function prepareRow(Row $row) {
-    var_dump($row->getSourceProperty('nuts_id'));
-  }
 }

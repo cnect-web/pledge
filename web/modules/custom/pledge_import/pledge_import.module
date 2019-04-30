@@ -12,6 +12,7 @@ function pledge_import_migration_plugins_alter(&$definitions) {
   $migrations = [
     'pledge_statuses',
     'pledge_milestone_statuses',
+    'pledge_members',
   ];
 
   foreach ($migrations as $migration) {
