@@ -39,6 +39,7 @@
         "drupal/leaflet": "^1.0@beta",
         "drupal/mail_login": "^1.0",
         "drupal/metatag": "^1.7",
+        "drupal/menu_item_role_access": "^1.0",
         "drupal/migrate_plus": "^4.0",
         "drupal/migrate_source_csv": "^2.0",
         "drupal/migrate_tools": "^4.0",

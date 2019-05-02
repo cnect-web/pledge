@@ -15,7 +15,7 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
 
     $parameters = $attributes->getParameters()->all();
     if (
-      !empty($parameters['view_id']) && $parameters['view_id'] == 'pledges' ||
+      !empty($parameters['view_id']) ||
       !empty($parameters['node']) && !empty($parameters['node'])
     ) {
       return TRUE;
@@ -35,20 +35,28 @@ class PledgeBreadcrumbBuilder implements BreadcrumbBuilderInterface{
 
     // Get the node for the current page
     $node = $route_match->getParameter('node');
+    if (!empty($node)) {
+      if ($node->bundle() == 'pledge') {
+        $breadcrumb->addLink(Link::createFromRoute('Pledges', 'view.pledges.page'));
+      }
+      elseif ($node->bundle() == 'members') {
+        $breadcrumb->addLink(Link::createFromRoute('Members', 'view.pledge_members.page'));
+      }
 
-    if (!empty($node) && $node->bundle() == 'pledge') {
-      $breadcrumb->addLink(Link::createFromRoute('Pledges', 'view.pledges.page'));
-      $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
-    }
-
-    if (!empty($node) && $node->bundle() == 'members') {
-      $breadcrumb->addLink(Link::createFromRoute('Members', 'view.pledge_members.page'));
       $breadcrumb->addLink(Link::createFromRoute($node->getTitle(), '<nolink>'));
     }
 
     $view = $route_match->getParameter('view_id');
-    if (!empty($view) && $view == 'pledges') {
-      $breadcrumb->addLink(Link::createFromRoute('Pledges', '<nolink>'));
+    if (!empty($view)) {
+      if ($view == 'pledges') {
+        $breadcrumb->addLink(Link::createFromRoute('Pledges', '<nolink>'));
+      }
+      elseif ($view == 'pledge_members') {
+        $breadcrumb->addLink(Link::createFromRoute('Members', '<nolink>'));
+      }
+      elseif ($view == 'pledge_your_pledges') {
+        $breadcrumb->addLink(Link::createFromRoute('Your pledges', '<nolink>'));
+      }
     }
 
     // Don't forget to add cache control by a route.

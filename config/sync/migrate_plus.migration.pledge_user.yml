@@ -25,7 +25,7 @@ process:
     default_value: 1
   roles:
     plugin: default_value
-    default_value: 2
+    default_value: pledger
   field_pledge_name: name
 destination:
   plugin: 'entity:user'
