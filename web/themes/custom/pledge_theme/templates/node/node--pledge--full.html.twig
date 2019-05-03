@@ -34,6 +34,12 @@
             <div class="xpl-last-update">
                 {{ "Last update"|t }}: {{ node.changed.value|date("m/d/Y") }}<br>
             </div>
+
+            {% if show_edit_link %}
+            <div class="xpl-last-update">
+                <a href="{{ show_edit_link }}">{{ "Update this pledge"|t }}</a>
+            </div>
+            {% endif %}
         </div>
     </div>
 
