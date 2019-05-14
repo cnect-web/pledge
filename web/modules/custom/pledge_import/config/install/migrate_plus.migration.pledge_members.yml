@@ -43,6 +43,8 @@ source:
     5:
       country: 'Country'
     6:
+      id_pledge: 'Pledge ID'
+    7:
       id_country: 'Country ID'
 process:
   type:
@@ -53,6 +55,10 @@ process:
   field_pledge_contact_email: email
   field_pledge_contribution: contribution
   field_pledge_website: website
+  field_pledge_pledge:
+    plugin: migration_lookup
+    migration: pledge_node
+    source: id_pledge
   field_pledge_countries:
     plugin: sub_process
     source: id_country
